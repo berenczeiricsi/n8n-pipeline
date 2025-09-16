@@ -233,8 +233,7 @@
       "position": [-1184, 896],
       "id": "534f9784-00fc-40d3-b033-e4c28ec93c86",
       "name": "Git - Update Remote Repo",
-      "executeOnce": true,
-      "onError": "continueErrorOutput"
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -784,7 +783,7 @@
       "main": [
         [
           {
-            "node": "Loop Over Each Generated Content for Storing all in a separate File",
+            "node": "Git - Update Remote Repo",
             "type": "main",
             "index": 0
           }
