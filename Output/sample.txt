@@ -1,0 +1,24 @@
+{
+  "course": {
+    "id": "ipcenter:Deutsch A2", // <- global eindeutiger identifier
+    "name": "A2", // <- können wir eventuell auch irgendwann von hier wegbringen und normalisieren
+    "classes": [
+      {
+        // "id": 1, <- nicht mehr notwendig
+        "name": "Reflexive Verben", // <- ist nun gleichzeitig auch die ID
+        "description": "Einführung in reflexive Verben (Akkusativ, Dativ, Pronomen und Übungen).",
+        // "courseId": 1, <- noch nie notwendig gewesen
+        // "sessions": [], <- ???
+        "contentElements": [
+          {
+          // "id": 1, <- nicht mehr notwendig
+            "name": "Reflexiverben", // <- ist nun gleichzeitig auch die ID
+            "type": "CONTENT",
+            // "order": 1, <- nicht notwendig, da wir die Reihenfolge über das Array abbilden?
+            ...
+          },
+          ...]
+      }
+      ...]
+    }
+}
