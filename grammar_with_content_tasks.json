@@ -1,0 +1,233 @@
+{
+  "course": {
+    "id": 1,
+    "name": "A2",
+    "classes": [
+      {
+        "id": 1,
+        "name": "Reflexive Verben",
+        "description": "Einführung in reflexive Verben (Akkusativ, Dativ, Pronomen und Übungen).",
+        "courseId": 1,
+        "sessions": [],
+        "contentElements": [
+          {
+            "id": 1,
+            "name": "Reflexiverben",
+            "type": "CONTENT",
+            "order": 1,
+            "content": "Reflexive Verben sind Verben, bei denen das Subjekt (die Person oder Sache, die handelt) und das Objekt (auf das sich die Handlung bezieht) dieselbe Person oder Sache sind. Das bedeutet, dass jemand eine Handlung an sich selbst ausführt.\nDas Wort „reflexiv“ bedeutet, dass die Handlung auf den Handelnden selbst zurückfällt.\n Beispiele: Ich wasche mich.  Ich wasche mich selbst.\nDu rasierst dich.  Du rasierst dich selbst.\nEr kämmt sich.  Er kämmt sich selbst.\nReflexive Verben bestehen aus einem finiten Verb (man kann es konjugieren) und einem reflexiven Pronomen. Das reflexive Pronomen steht im Akkusativ. Der Unterschied zwischen reflexiven und nicht-reflexiven Verben ist folgender:\n\nEin normales Verb hat oft ein anderes Objekt im Akkusativ. Nehmen wir als Beispiel das Verb „waschen“:\nIch wasche das Auto. (Subjekt = ich, Objekt = das Auto → Ich wasche etwas anderes.)\nDas reflexive Verb „sich waschen“ zeigt, dass die Person die Handlung an sich selbst ausführt.\nIch wasche mich. (Subjekt = ich, Objekt = mich → Ich wasche mich selbst.)\n\nDas reflexive Verb „sich waschen“ zeigt, dass die Person die Handlung an sich selbst ausführt.\nBeispiele reflexiver Verben:\nsich waschen → Ich wasche mich.\nsich duschen → Du duschst dich.\nsich anziehen → Er zieht sich an.\nsich ausziehen → Wir ziehen uns aus.",
+            "task": {
+              "taskDescription": "Fülle die Wörter in die Sätze ein.",
+              "task": {
+                "type": "fill-in-the-blank",
+                "sentences": [
+                  {
+                    "fillSentence": "Ich {{INSERT}} mich jeden Morgen.",
+                    "correctSentence": "Ich {{wasche}} mich jeden Morgen."
+                  },
+                  {
+                    "fillSentence": "Du {{INSERT}} dich am Abend.",
+                    "correctSentence": "Du {{rasierst}} dich am Abend."
+                  }
+                ],
+                "fillWords": ["wasche", "rasierst"]
+              }
+            }
+          },
+          {
+            "id": 2,
+            "name": "Reflexiverben Pronomen im Akkusativ",
+            "type": "CONTENT",
+            "order": 2,
+            "content": "Jedes Pronomen hat sein reflexives Pronomen. \n Ich, mich \n du, dich \n er/sie/es, sich \n wir, uns \n ihr , euch \n sie, sich",
+            "task": {
+              "taskDescription": "Setze das passende reflexive Pronomen ein.",
+              "task": {
+                "type": "fill-in-the-blank",
+                "sentences": [
+                  {
+                    "fillSentence": "Ich sehe {{INSERT}} im Spiegel.",
+                    "correctSentence": "Ich sehe {{mich}} im Spiegel."
+                  },
+                  {
+                    "fillSentence": "Du kämst {{INSERT}}.",
+                    "correctSentence": "Du kämst {{dich}}."
+                  }
+                ],
+                "fillWords": ["mich", "dich"]
+              }
+            }
+          },
+          {
+            "id": 3,
+            "name": "Reflexiverben Unterschied Akkusativ und Dativ",
+            "type": "CONTENT",
+            "order": 3,
+            "content": "Die pronomen ändern sich je nachdem, ob der satz im dativ oder akkusativ ist. Im Dativ stehen sie, wenn es noch ein anderes Objekt gibt. \n Beispiele: \n Akkusativ: Ich wasche mich \n Dativ: Ich wasche mir die Hände.",
+            "task": {
+              "taskDescription": "Fülle die Wörter in die Sätze ein.",
+              "task": {
+                "type": "fill-in-the-blank",
+                "sentences": [
+                  {
+                    "fillSentence": "Ich {{INSERT}} mich jeden Morgen.",
+                    "correctSentence": "Ich {{wasche}} mich jeden Morgen."
+                  },
+                  {
+                    "fillSentence": "Du {{INSERT}} dich am Abend.",
+                    "correctSentence": "Du {{rasierst}} dich am Abend."
+                  }
+                ],
+                "fillWords": ["wasche", "rasierst"]
+              }
+            }
+          },
+          {
+            "id": 4,
+            "name": "Reflexiverben Pronomen im Dativ",
+            "type": "CONTENT",
+            "order": 4,
+            "content": "Jedes Pronomen hat sein reflexives Pronomen im Dativ, was unterschiedlich ist zum Akkusativ. \n Ich, mir \n du, dir \n er/sie/es, sich \n wir, uns \n ihr , euch \n sie, sich \n Beispiel: \n: Ich wasche mir die Hände. (Subjekt = ich, Objekt = Hände) \n Du schminkst dir die Augen (Subjekt = ich, Objekt = Augen) Im Dativ steht das reflexive Pronomen, wenn das Subjekt sich etwas tut, das einen direkten Einfluss auf ein anderes Körperteil oder Besitzobjekt hat. Der Unterschied zwischen Dativ und Akkusativ ist hier oft entscheidend für die richtige Bedeutung des Satzes.",
+            "task": {
+              "taskDescription": "Wähle das richtige reflexive Dativpronomen.",
+              "task": {
+                "type": "fill-in-the-blank",
+                "sentences": [
+                  {
+                    "fillSentence": "Ich wasche {{INSERT}} die Hände.",
+                    "correctSentence": "Ich wasche {{mir}} die Hände."
+                  },
+                  {
+                    "fillSentence": "Du schminkst {{INSERT}} die Augen.",
+                    "correctSentence": "Du schminkst {{dir}} die Augen."
+                  }
+                ],
+                "fillWords": ["mir", "dir"]
+              }
+            }
+          },
+          {
+            "id": 5,
+            "name": "Trennbare und untrennbare Verben",
+            "type": "CONTENT",
+            "order": 5,
+            "content": "Trennbare Verben bestehen aus einem Verb und einem Präfix, das im Satz abgetrennt wird. Beispiele: aufstehen → Ich stehe um 7 Uhr auf. einkaufen → Wir kaufen am Samstag ein. Das Präfix steht am Satzende.\nUntrennbare Verben behalten das Präfix immer zusammen mit dem Verb. Beispiele: besuchen → Er besucht seine Oma. verstehen → Ich verstehe dich gut.\nMerke: Häufig trennbar sind Präfixe wie ab-, an-, auf-, aus-, ein-, mit-, nach-, vor-, weg-, zu-. Untrennbar sind Präfixe wie be-, emp-, ent-, er-, ge-, miss-, ver-, zer-.",
+            "task": {
+              "taskDescription": "Setze das Verb in der richtigen Form ein und achte auf trennbar/untrennbar.",
+              "task": {
+                "type": "fill-in-the-blank",
+                "sentences": [
+                  {
+                    "fillSentence": "Ich {{INSERT}} jeden Morgen um 6 Uhr auf.",
+                    "correctSentence": "Ich {{stehe}} jeden Morgen um 6 Uhr auf."
+                  },
+                  {
+                    "fillSentence": "Er {{INSERT}} seine Großeltern am Wochenende.",
+                    "correctSentence": "Er {{besucht}} seine Großeltern am Wochenende."
+                  }
+                ],
+                "fillWords": ["stehe", "besucht"]
+              }
+            }
+          },
+          {
+            "id": 6,
+            "name": "Präpositionen mit Dativ, Akkusativ und Wechselpräpositionen",
+            "type": "CONTENT",
+            "order": 6,
+            "content": "Präpositionen mit Dativ: immer Dativ (aus, bei, mit, nach, seit, von, zu) → Beispiel: Ich gehe mit meiner Freundin ins Kino.\nPräpositionen mit Akkusativ: immer Akkusativ (durch, für, gegen, ohne, um) → Beispiel: Er geht ohne seinen Bruder zur Schule.\nWechselpräpositionen (an, auf, hinter, in, neben, über, unter, vor, zwischen) nehmen Dativ, wenn keine Bewegung stattfindet, und Akkusativ, wenn eine Bewegung stattfindet.\nBeispiel Dativ: Das Buch liegt auf dem Tisch. → Wo?\nBeispiel Akkusativ: Ich lege das Buch auf den Tisch. → Wohin?",
+            "task": {
+              "taskDescription": "Setze die richtige Präposition und den richtigen Fall ein.",
+              "task": {
+                "type": "fill-in-the-blank",
+                "sentences": [
+                  {
+                    "fillSentence": "Das Bild hängt {{INSERT}} Wand.",
+                    "correctSentence": "Das Bild hängt {{an der}} Wand."
+                  },
+                  {
+                    "fillSentence": "Ich stelle den Stuhl {{INSERT}} Tisch.",
+                    "correctSentence": "Ich stelle den Stuhl {{neben den}} Tisch."
+                  }
+                ],
+                "fillWords": ["an der", "neben den"]
+              }
+            }
+          },
+          {
+            "id": 7,
+            "name": "Perfekt mit haben und sein",
+            "type": "CONTENT",
+            "order": 7,
+            "content": "Das Perfekt wird mit dem Hilfsverb haben oder sein und dem Partizip II gebildet.\nMit 'haben' für die meisten Verben: Ich habe gearbeitet.\nMit 'sein' für Verben der Bewegung oder Zustandsänderung: Ich bin gegangen.\nPartizip II: ge- + Verbstamm + -t oder -en. Beispiel: spielen → gespielt, fahren → gefahren.",
+            "task": {
+              "taskDescription": "Bilde das Perfekt.",
+              "task": {
+                "type": "fill-in-the-blank",
+                "sentences": [
+                  {
+                    "fillSentence": "Ich {{INSERT}} gestern viel gearbeitet.",
+                    "correctSentence": "Ich {{habe}} gestern viel gearbeitet."
+                  },
+                  {
+                    "fillSentence": "Wir {{INSERT}} in den Urlaub gefahren.",
+                    "correctSentence": "Wir {{sind}} in den Urlaub gefahren."
+                  }
+                ],
+                "fillWords": ["habe", "sind"]
+              }
+            }
+          },
+          {
+            "id": 8,
+            "name": "Präteritum der Modalverben",
+            "type": "CONTENT",
+            "order": 8,
+            "content": "Modalverben im Präteritum:\n- können → konnte\n- müssen → musste\n- wollen → wollte\n- dürfen → durfte\n- sollen → sollte\n- mögen → mochte\nBeispiel: Ich konnte gestern nicht kommen. Er wollte ins Kino gehen.",
+            "task": {
+              "taskDescription": "Setze das Modalverb im Präteritum ein.",
+              "task": {
+                "type": "fill-in-the-blank",
+                "sentences": [
+                  {
+                    "fillSentence": "Ich {{INSERT}} gestern nicht ins Büro gehen.",
+                    "correctSentence": "Ich {{konnte}} gestern nicht ins Büro gehen."
+                  },
+                  {
+                    "fillSentence": "Wir {{INSERT}} das Problem schnell lösen.",
+                    "correctSentence": "Wir {{mussten}} das Problem schnell lösen."
+                  }
+                ],
+                "fillWords": ["konnte", "mussten"]
+              }
+            }
+          },
+          {
+            "id": 9,
+            "name": "Futur I",
+            "type": "CONTENT",
+            "order": 9,
+            "content": "Das Futur I wird mit 'werden' und dem Infinitiv gebildet. Es drückt Pläne, Vorhersagen oder Absichten aus.\nBeispiel: Ich werde morgen arbeiten. Er wird bald Vater werden.\nStruktur: Subjekt + werden (konjugiert) + ... + Infinitiv.",
+            "task": {
+              "taskDescription": "Bilde das Futur I.",
+              "task": {
+                "type": "fill-in-the-blank",
+                "sentences": [
+                  {
+                    "fillSentence": "Ich {{INSERT}} morgen ins Kino gehen.",
+                    "correctSentence": "Ich {{werde}} morgen ins Kino gehen."
+                  },
+                  {
+                    "fillSentence": "Sie {{INSERT}} nächste Woche nach Berlin fahren.",
+                    "correctSentence": "Sie {{wird}} nächste Woche nach Berlin fahren."
+                  }
+                ],
+                "fillWords": ["werde", "wird"]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

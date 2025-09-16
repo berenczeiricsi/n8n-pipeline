@@ -1,0 +1,48 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: n8n-postgres-pipline
+    restart: always
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    container_name: n8n-pipline
+    restart: always
+    environment:
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: postgres
+      DB_POSTGRESDB_PORT: 5432
+      DB_POSTGRESDB_DATABASE: ${POSTGRES_DB}
+      DB_POSTGRESDB_USER: ${POSTGRES_USER}
+      DB_POSTGRESDB_PASSWORD: ${POSTGRES_PASSWORD}
+      TZ: Europe/Vienna
+    ports:
+      - ${N8N_HOST_PORT}:5678
+    links:
+      - postgres
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - /Users/berenczeiricsi/Developer/AI-PALS/n8n-pipeline/Input:/tmp/ai-pal-content/Input
+      - /Users/berenczeiricsi/Developer/AI-PALS/n8n-pipeline/Output:/tmp/ai-pal-content/Output
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres:
+  n8n_data:

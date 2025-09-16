@@ -1,0 +1,1081 @@
+{
+  "name": "PDF to JSON Pipeline - ipcenter",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [-1552, 128],
+      "id": "51731431-4f90-4124-8d34-b502d3395431",
+      "name": "When clicking 'Execute workflow'"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {
+          "responseFormat": "json_object",
+          "temperature": 0.1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [-400, 880],
+      "id": "f773ec27-4c1c-47ea-b467-ffd960a6352f",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "6ziwAuMwRri7ndTp",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// expects: current item is one Bildungseinheit: { name, text }\nconst name = $input.item.json.name || '';\nconst raw = $input.item.json.text || '';\nconst file = $input.item.json.file || '';\n\nconst system = `Du bist ein strenger JSON-Extractor für DaF-Unterricht. \nGib ausschließlich valides JSON zurück, ohne Erklärtext. \nZiel: Aus einer \"Bildungseinheit\" ein Content-Element + optionale Aufgaben erzeugen.\n`;\n\nconst schemaHint = `Return-JSON (ohne Markdown):\n{\n  \"file\": {\n    \"name\": <string>,           \n    \"description\": <string>     \n  },\n  \"contentElements\": [\n    {\n      \"id\": 0,\n      \"name\": <string>,           \n      \"type\": \"CONTENT\",\n      \"order\": <number>,          \n      \"content\": <string>,        \n      \"task\": {\n        \"taskDescription\": <string> | null,\n        \"task\": {\n          \"type\": \"fill-in-the-blank\" | \"true-false\" | \"matching\" | \"sentence-puzzle\",\n          \"sentences\": [ { \"fillSentence\": <string>, \"correctSentence\": <string> } ],\n          \"fillWords\": [<string>]\n        } | null\n      } | null\n    }\n  ]\n}\n\n/* Aufteilungsregeln:\n- Teile den Rohtext in mehrere inhaltlich kohärente Einheiten (z. B. nach Überschriften, Themenblöcken, Unterkapiteln, „Übungen“, „Beispiele“, „Regeln“, „Ausnahmen“).\n- 3–10 Content-Elemente sind ideal; vermeide Ein-Satz-Elemente.\n- \"order\" fortlaufend ab 1.\n- Jede Einheit hat genau EINE Aufgabenart (wenn sinnvoll); 3–6 Items je Aufgabe.\n- Wenn keine sinnvolle Aufgabe: \"task\" = null.\n\nAllgemein:\n- Sprache Deutsch, A2-Niveau, keine Metakommentare.\n- Gib ausschließlich valides JSON zurück (keine Codefences, kein Fließtext).\n- Behalte ausführliche Erklärungen und detaillierte Beispiele für den Theorieteil.\n-Der 'content'-Bereich soll vollständig und lehrreich sein.\n-Füge ausreichend Beispiele und Erklärungen hinzu, um das Thema vollständig zu erklären.\n-Kürze nur echte Wiederholungen, aber bewahre wichtige Details und Beispiele.\n- Mini-Diktat optional sehr kurz (falls passend).\n\nZusatzregeln für Lückentexte:\n- Lücken im fillSentence NUR als {{INSERT}}.\n- Im correctSentence die Lösungen strikt mit {{...}} markieren.\n- fillWords exakt in derselben Reihenfolge wie im correctSentence.\n- Anzahl {{INSERT}} == Anzahl {{...}} == Länge von fillWords.\n`;\n\nconst user = `Titel: ${name}\nRohtext:\n\"\"\"${raw}\"\"\"\n\nBitte extrahiere MEHRERE Content-Elemente nach Schema (contentElements[]) und gib zusätzlich \"course.name\" und \"course.description\" zurück.\nKürze Redundanzen, behalte Kernerklärungen und Beispiele.\nWähle pro Content-Element maximal EINE Aufgabenart und konvertiere 3–6 Items.`;\n\nreturn {\n  json: {\n    system,\n    user,\n    schemaHint,\n    file\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-576, 672],
+      "id": "690c5a14-c68c-43b4-9e01-3f1f28ff978c",
+      "name": "Function - Build Prompts"
+    },
+    {
+      "parameters": {
+        "authentication": "gitPassword",
+        "operation": "clone",
+        "repositoryPath": "={{ $json.repo.path }}",
+        "sourceRepository": "={{ $json.repo.url }}"
+      },
+      "type": "n8n-nodes-base.git",
+      "typeVersion": 1,
+      "position": [-1184, 128],
+      "id": "2a8f503b-9f45-41e2-8c83-5d86ef64302a",
+      "name": "Git - Clone",
+      "credentials": {
+        "gitPassword": {
+          "id": "UkoDDNJTnYMB9h8t",
+          "name": "Git account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "08b70f22-c5db-4808-a0e7-5512ce12f6f8",
+              "name": "name",
+              "value": "={{ (function(){ const fn = $('Sort - By FileName - Git').item.json.fileName; const noExt = fn.replace(/\\.pdf$/i,''); const noLeadingNumDot = noExt.replace(/^\\d+\\.\\s*/, ''); return noLeadingNumDot.replaceAll('_',' ').trim(); })() }}",
+              "type": "string"
+            },
+            {
+              "id": "c4ea1209-bc2b-462d-8a45-c8a2b108eaf6",
+              "name": "text",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            },
+            {
+              "id": "af7ecbf2-8a07-47c8-a6e3-73f9da52c5dd",
+              "name": "file.input",
+              "value": "={{ $('Sort - By FileName - Git').item.json.fileName }}",
+              "type": "string"
+            },
+            {
+              "id": "6464fe78-7094-47e3-a472-1f427909e8a0",
+              "name": "file.output",
+              "value": "={{ (function(){ const fn = $('Sort - By FileName - Git').item.json.fileName; return fn.replace(/\\.[^.]+$/,'') + '.json'; })() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-832, 480],
+      "id": "a20f6391-4057-4ae2-986b-ebb9ac6071ce",
+      "name": "Get Only Text - Git"
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "fileName"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [-1184, 480],
+      "id": "b9300025-ebe5-4aad-868a-1c88c27e8183",
+      "name": "Sort - By FileName - Git"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "22977cff-1743-4357-9651-94691b0e37ac",
+              "name": "repo.url",
+              "value": "https://github.com/berenczeiricsi/n8n-pipeline.git",
+              "type": "string"
+            },
+            {
+              "id": "ccbeb819-5ae2-436c-908c-cac6eaa30e24",
+              "name": "repo.path",
+              "value": "/tmp/n8n-pipeline-test",
+              "type": "string"
+            },
+            {
+              "id": "98c9b5d9-77be-4622-b33f-9c37a671ce05",
+              "name": "content.read_folder",
+              "value": "Input",
+              "type": "string"
+            },
+            {
+              "id": "cdadfa2d-96a7-4742-a0b8-16c340c626d6",
+              "name": "content.store_folder",
+              "value": "Output",
+              "type": "string"
+            },
+            {
+              "id": "51c57aa9-eb35-4b26-9a0d-84fe6b98d215",
+              "name": "course.id",
+              "value": "ipcenter:Deutsch A2",
+              "type": "string"
+            },
+            {
+              "id": "d6368e5c-8bce-4063-9f6f-b4cb0306dc2b",
+              "name": "course.name",
+              "value": "A2",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1360, 128],
+      "id": "7e582b53-837f-4d32-9199-63544d26344b",
+      "name": "Globals"
+    },
+    {
+      "parameters": {
+        "fileSelector": "={{ $('Globals').item.json.repo.path }}/{{ $('Globals').item.json.content.read_folder }}/**/*.pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [-464, 144],
+      "id": "7becf9a5-b764-401d-b6b2-30785d9ed4bc",
+      "name": "Read - Input Folder",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {
+          "keepSource": "json"
+        }
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [-256, 144],
+      "id": "c01cbdff-dc53-49b6-b2d3-38cf133d0cd8",
+      "name": "Extract from File - PDF"
+    },
+    {
+      "parameters": {
+        "operation": "add",
+        "repositoryPath": "={{ $('Globals').item.json.repo.path }}",
+        "pathsToAdd": "={{ $json.fileName }}"
+      },
+      "type": "n8n-nodes-base.git",
+      "typeVersion": 1,
+      "position": [-464, 1072],
+      "id": "1cb2107e-1809-4db6-b4df-b4eb3d90bc6c",
+      "name": "Git - Add New File"
+    },
+    {
+      "parameters": {
+        "operation": "commit",
+        "repositoryPath": "={{ $('Globals').item.json.repo.path }}",
+        "message": "=Added New Content: {{ $('Convert Content Element to File').item.binary.data.fileName }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.git",
+      "typeVersion": 1,
+      "position": [-256, 1072],
+      "id": "19036cbd-fc96-40b1-986d-a90a8e9398ab",
+      "name": "Git - Create Commit Message"
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "repositoryPath": "={{ $('Globals').item.json.repo.path }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.git",
+      "typeVersion": 1,
+      "position": [-1184, 896],
+      "id": "534f9784-00fc-40d3-b033-e4c28ec93c86",
+      "name": "Git - Update Remote Repo",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "pull",
+        "repositoryPath": "={{ $json.repo.path }}"
+      },
+      "type": "n8n-nodes-base.git",
+      "typeVersion": 1,
+      "position": [-832, 144],
+      "id": "37be783f-fc8a-435e-bbcd-b6f1b773b995",
+      "name": "Git - Update Local Repo"
+    },
+    {
+      "parameters": {
+        "operation": "addConfig",
+        "repositoryPath": "={{ $('Globals').item.json.repo.path }}",
+        "key": "user.name",
+        "value": "n8n Workflow",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.git",
+      "typeVersion": 1,
+      "position": [-992, 0],
+      "id": "9a6e4b2d-a639-4fd6-bda6-6ba26cc15034",
+      "name": "Git - Add Config Name"
+    },
+    {
+      "parameters": {
+        "operation": "addConfig",
+        "repositoryPath": "={{ $('Globals').item.json.repo.path }}",
+        "key": "user.email",
+        "value": "n8n@yiprawr.dev",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.git",
+      "typeVersion": 1,
+      "position": [-640, 0],
+      "id": "09148f82-8e53-41e1-92cc-c39daedaf01a",
+      "name": "Git - Add Config E-Mail"
+    },
+    {
+      "parameters": {
+        "content": "## Read Current Content Folder and what files are already converted to json",
+        "height": 288,
+        "width": 480,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [80, -16],
+      "typeVersion": 1,
+      "id": "69ba105b-962b-47c6-aca6-7e9e99442b17",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Filter what Course Content Already exist and when not run LLM else will add it to the final output later",
+        "height": 272,
+        "width": 480,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [80, 336],
+      "typeVersion": 1,
+      "id": "359e1121-f8e1-4930-a03e-320c7a2a936b",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Combine All Course Elements into one File",
+        "height": 128,
+        "width": 480,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [80, 1376],
+      "typeVersion": 1,
+      "id": "5577fd3b-7ee8-41a3-ba5e-712917fd7762",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Store Course Element into Git Repo\n\n- Loop -> done disconnected for Testing that it not push the json files into the Remote Git Repo",
+        "height": 128,
+        "width": 480,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [80, 1056],
+      "typeVersion": 1,
+      "id": "70328127-b62b-42d2-9358-7ce69c8d6c82",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2cb4d653-6a8e-48d7-acff-c51b1e0f8020",
+              "name": "file",
+              "value": "={{ $json.file }}",
+              "type": "object"
+            },
+            {
+              "id": "add94562-db55-41eb-bd5f-151465dddf8e",
+              "name": "contentElement",
+              "value": "={{ $json.contentElements }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1184, 1072],
+      "id": "d43be27e-80ba-421d-a75a-9dc236911d41",
+      "name": "Set Fields To Store"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Normalize item to updated schema per file\nconst COURSE_ID = $('Globals').first().json.course.id;\nconst COURSE_NAME = $('Globals').first().json.course.name;\n\nconst file = $json.file || {};\nconst elements = Array.isArray($json.contentElement)\n  ? $json.contentElement\n  : (Array.isArray($json.contentElements) ? $json.contentElements : []);\n\n// Extract class name from PDF filename (remove numbers and extension)\nconst className = file.name || '';\n\nconst classes = [{\n  name: className,  // Use filename as class name (also serves as ID)\n  description: file.description || '',\n  contentElements: elements.map((ce, idx) => ({\n    name: ce.name || `Content ${idx + 1}`,  // Use name as ID\n    type: ce.type || 'CONTENT',\n    content: ce.content || '',\n    task: ce.task || null\n  }))\n}];\n\nreturn [{\n  json: {\n    course: {\n      id: COURSE_ID,\n      name: COURSE_NAME,\n      classes\n    }\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-1088, 1072],
+      "id": "da682860-83ec-4349-9643-1d2c0575ed9f",
+      "name": "Normalize To Course Schema"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a0844866-41e7-4362-b65e-c4fa631b7d98",
+              "name": "file_meta",
+              "value": "={{ $('Function - Build Prompts').item.json.file }}",
+              "type": "object"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-96, 672],
+      "id": "5172de6f-3fe4-400b-830b-7b814bc08a2c",
+      "name": "Add File Field to LLM Response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nconst existing_file_content = {};\nconst existing_file_names = $input.first().json.exist_data.map(file => {\n  existing_file_content[file.fileName] = file.data;\n  return file.fileName;\n})\n//const existing_file_names = [];\n\nfor (const item of $input.last().json.content_data) {\n  if (existing_file_names.includes(item.name)) {\n    item.exists = true;\n    item.contentElements = existing_file_content[item.name];\n    delete item.text;\n    delete item.file;\n  } else {\n    item.exists = false;\n  }\n}\n\nreturn $input.last();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-1376, 656],
+      "id": "995f1a1c-7333-43db-88c4-a0942411b7bf",
+      "name": "Add Meta Data if File exist and Cleanup"
+    },
+    {
+      "parameters": {
+        "fileSelector": "={{ $('Globals').item.json.repo.path }}/{{ $('Globals').item.json.content.store_folder }}/*.json",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [-992, 336],
+      "id": "6654f21a-6765-42e5-97fe-66995537bead",
+      "name": "Read - Already Converted Content",
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "options": {
+          "keepSource": "json"
+        }
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [-832, 336],
+      "id": "9d84cd52-4242-429b-86f0-d832902d6b13",
+      "name": "Extract JSON from Already Converted Content",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c10eab4a-5549-48a4-8d35-9b0b759880f9",
+              "name": "fileName",
+              "value": "={{ $('Read - Already Converted Content').item.json.fileName.split('.')[1].replaceAll('_', ' ').trim() }}",
+              "type": "string"
+            },
+            {
+              "id": "ead25682-cdf5-415a-8338-463041e16b02",
+              "name": "data",
+              "value": "={{ $json.data }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-640, 336],
+      "id": "10f6318c-a90d-4f35-b881-a793ae1f26e4",
+      "name": "Add File Name to Converted Content",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "exist_data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [-464, 336],
+      "id": "84bf972a-2719-4719-b832-fcf6a1388947",
+      "name": "Aggregate - All Files into exist_data"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "content_data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [-464, 480],
+      "id": "2f9c3d09-46cd-4acc-a926-216e67024bb4",
+      "name": "Aggregate - All PDF Content to content_data"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [-256, 464],
+      "id": "ade0e182-db48-47b9-b3f1-432022a209d1",
+      "name": "Merge - Existing and Course Content together"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "content_data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [-1184, 656],
+      "id": "5444b7e7-f83d-46cb-a3fe-fa6dab9ebb19",
+      "name": "Split Out - content_data to Check all Items"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "54d1f4c7-25ad-480c-95d8-9f51ac551852",
+              "leftValue": "={{ $json.exists }}",
+              "rightValue": "=",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [-992, 656],
+      "id": "6eb4c99b-920f-48c1-a21a-2cb736978274",
+      "name": "If - File Exists is False"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [-1360, 1056],
+      "id": "0ad69cd3-5fd7-4274-870b-386e34e9728f",
+      "name": "Loop Over Each Generated Content for Storing all in a separate File"
+    },
+    {
+      "parameters": {
+        "content": "## Check if File Exists\n\n- No Exists -> Generate LLM Response\n- Exists -> Add it Later into the Full Course Content\n\n- Limit to 1 for Testing",
+        "height": 208,
+        "width": 480,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [80, 656],
+      "typeVersion": 1,
+      "id": "1fdcdcce-e75b-40a8-9960-e07176edcd85",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{$json.schemaHint}}\\n\\n{{$json.user}}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "={{ $json.system }}"
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [-400, 672],
+      "id": "5ab7bc64-f421-49c7-b17a-adf5071eaa6d",
+      "name": "LLM - Generate Content Element"
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "options": {
+          "fileName": "={{ $('Add File Field to LLM Response').item.json.file_meta.output }}"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [-992, 1072],
+      "id": "c7af93bf-93e1-4d27-88f1-938533dc7a77",
+      "name": "Convert Content Element to File"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $('Globals').item.json.repo.path }}/{{ $('Globals').item.json.content.store_folder }}/{{ $binary.data.fileName }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [-736, 1072],
+      "id": "ad5e9a87-5d5c-4885-a0ce-3f07fe092a4e",
+      "name": "Write JSON Files to Disk"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "exists",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [-1376, 1280],
+      "id": "ab9f61c6-8b3c-4ad8-becc-9e0de1a4b514",
+      "name": "Aggregate - All Existing Files"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "llm_gen",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [-1376, 1424],
+      "id": "dc70b49e-c5d9-4110-a887-cdfe28edfc4b",
+      "name": "Aggregate - All the Generated Content"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [-1152, 1408],
+      "id": "5dda751a-658d-4c4c-8778-47cb34cad03a",
+      "name": "Merge - Existing and Generated Content Together"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Helper to coerce to array\nconst asArray = (v) => Array.isArray(v) ? v : [];\n\n// Safely read from first/last input items\nconst first = $input.first();\nconst last  = $input.last();\n\nconst exists = asArray(first?.json?.exists);\nconst llmGen = asArray(last?.json?.llm_gen);\n\nconst contentElements = [];\n\n// from 'exists': take the first content element if present\nfor (const it of exists) {\n  const ce = it?.contentElements?.[0];\n  if (ce) contentElements.push(ce);\n}\n\n// from 'llm_gen': push items directly if present\nfor (const it of llmGen) {\n  if (it) contentElements.push(it);\n}\n\n// IMPORTANT: Code node must return an array of items\nreturn [\n  {\n    json: { contentElements }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-944, 1408],
+      "id": "7e2472b1-f449-4092-abd7-defa8e70c13b",
+      "name": "Get All - Content Elements into one List"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function node: normalize to updated schema\n// {\n//   \"course\": {\n//     \"id\": \"ipcenter:Deutsch A2\",\n//     \"name\": \"A2\",\n//     \"classes\": [\n//       {\n//         \"name\": \"...\",              // class title (also serves as ID)\n//         \"description\": \"...\",       // class description\n//         \"contentElements\": [\n//           { \"name\": \"...\", \"type\": \"CONTENT\", ... }   // content element with name as ID\n//         ]\n//       }\n//     ]\n//   }\n// }\n\n// ---- Config you can change ----\nconst COURSE_ID = $('Globals').first().json.course.id;\nconst COURSE_NAME = $('Globals').first().json.course.name;\n// -------------------------------\n\nconst top = $input.first().json;\n\nfunction wrapAsClass(contentEl, idx, className, classDesc) {\n  // Create content elements without id/order fields\n  const inner = {\n    name: contentEl.name || `Content ${idx + 1}`,\n    type: contentEl.type || 'CONTENT',\n    content: contentEl.content || '',\n    task: contentEl.task || null\n  };\n  \n  return {\n    name: className || contentEl.name || `Class ${idx + 1}`,  // name serves as ID\n    description: classDesc || '',\n    contentElements: [inner]\n  };\n}\n\nlet classes = [];\n\nif (top.contentElements && Array.isArray(top.contentElements)) {\n  // Shape A: [{ course, contentElement }, ...]\n  classes = top.contentElements.map((it, idx) => {\n    const ce = it.contentElement || {};\n    const fmeta = it.file || {};\n    return wrapAsClass(\n      ce,\n      idx,\n      fmeta.name || ce.name,       // class name from element's course meta (preferred)\n      fmeta.description || ''      // class description from element's course meta\n    );\n  });\n\n} else if (top.course && Array.isArray(top.course.classes)) {\n  // Shape B: current result where classes are plain content elements\n  const rootDesc = top.course.description || '';\n  classes = top.course.classes.map((ce, idx) =>\n    // Best available fallback: class name from element, description from root\n    wrapAsClass(ce, idx, ce.name, rootDesc)\n  );\n\n} else {\n  throw new Error('Unsupported input shape. Expected `contentElements[]` or `course.classes[]`.');\n}\n\nreturn [{\n  json: {\n    course: {\n      id: COURSE_ID,\n      name: COURSE_NAME,\n      classes\n    }\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-736, 1408],
+      "id": "503f9588-5b7f-4e88-8c21-c877e42a71c7",
+      "name": "Transform all the Content Elements into the Output format"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [-768, 720],
+      "id": "b7838327-d41e-4c22-965e-51148c6c2422",
+      "name": "Limit"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Globals",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "LLM - Generate Content Element",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Function - Build Prompts": {
+      "main": [
+        [
+          {
+            "node": "LLM - Generate Content Element",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git - Clone": {
+      "main": [
+        [
+          {
+            "node": "Git - Add Config Name",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Git - Update Local Repo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Only Text - Git": {
+      "main": [
+        [
+          {
+            "node": "Aggregate - All PDF Content to content_data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort - By FileName - Git": {
+      "main": [
+        [
+          {
+            "node": "Get Only Text - Git",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read - Already Converted Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Globals": {
+      "main": [
+        [
+          {
+            "node": "Git - Clone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read - Input Folder": {
+      "main": [
+        [
+          {
+            "node": "Extract from File - PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File - PDF": {
+      "main": [
+        [
+          {
+            "node": "Sort - By FileName - Git",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git - Add New File": {
+      "main": [
+        [
+          {
+            "node": "Git - Create Commit Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git - Create Commit Message": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Each Generated Content for Storing all in a separate File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git - Update Local Repo": {
+      "main": [
+        [
+          {
+            "node": "Read - Input Folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git - Add Config Name": {
+      "main": [
+        [
+          {
+            "node": "Git - Add Config E-Mail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git - Add Config E-Mail": {
+      "main": [
+        [
+          {
+            "node": "Read - Input Folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Fields To Store": {
+      "main": [
+        [
+          {
+            "node": "Normalize To Course Schema",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize To Course Schema": {
+      "main": [
+        [
+          {
+            "node": "Convert Content Element to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add File Field to LLM Response": {
+      "main": [
+        [
+          {
+            "node": "Aggregate - All the Generated Content",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Loop Over Each Generated Content for Storing all in a separate File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Meta Data if File exist and Cleanup": {
+      "main": [
+        [
+          {
+            "node": "Split Out - content_data to Check all Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read - Already Converted Content": {
+      "main": [
+        [
+          {
+            "node": "Extract JSON from Already Converted Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract JSON from Already Converted Content": {
+      "main": [
+        [
+          {
+            "node": "Add File Name to Converted Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add File Name to Converted Content": {
+      "main": [
+        [
+          {
+            "node": "Aggregate - All Files into exist_data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate - All Files into exist_data": {
+      "main": [
+        [
+          {
+            "node": "Merge - Existing and Course Content together",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate - All PDF Content to content_data": {
+      "main": [
+        [
+          {
+            "node": "Merge - Existing and Course Content together",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge - Existing and Course Content together": {
+      "main": [
+        [
+          {
+            "node": "Add Meta Data if File exist and Cleanup",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out - content_data to Check all Items": {
+      "main": [
+        [
+          {
+            "node": "If - File Exists is False",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If - File Exists is False": {
+      "main": [
+        [
+          {
+            "node": "Function - Build Prompts",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Aggregate - All Existing Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Each Generated Content for Storing all in a separate File": {
+      "main": [
+        [
+          {
+            "node": "Git - Update Remote Repo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set Fields To Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM - Generate Content Element": {
+      "main": [
+        [
+          {
+            "node": "Add File Field to LLM Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert Content Element to File": {
+      "main": [
+        [
+          {
+            "node": "Write JSON Files to Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write JSON Files to Disk": {
+      "main": [
+        [
+          {
+            "node": "Git - Add New File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate - All Existing Files": {
+      "main": [
+        [
+          {
+            "node": "Merge - Existing and Generated Content Together",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate - All the Generated Content": {
+      "main": [
+        [
+          {
+            "node": "Merge - Existing and Generated Content Together",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge - Existing and Generated Content Together": {
+      "main": [
+        [
+          {
+            "node": "Get All - Content Elements into one List",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All - Content Elements into one List": {
+      "main": [
+        [
+          {
+            "node": "Transform all the Content Elements into the Output format",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Function - Build Prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "31101489-6aaa-40ef-b77f-c85b31195e15",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5596a7dfd9f37bfbec8611495e5045946d4176cd8be29e0c648b18dc51adfa8e"
+  },
+  "id": "5umj02eX1vmQY87T",
+  "tags": []
+}
