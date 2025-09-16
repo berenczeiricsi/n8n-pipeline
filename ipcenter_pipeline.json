@@ -205,7 +205,8 @@
       "typeVersion": 1,
       "position": [-464, 1072],
       "id": "1cb2107e-1809-4db6-b4df-b4eb3d90bc6c",
-      "name": "Git - Add New File"
+      "name": "Git - Add New File",
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -218,7 +219,8 @@
       "typeVersion": 1,
       "position": [-256, 1072],
       "id": "19036cbd-fc96-40b1-986d-a90a8e9398ab",
-      "name": "Git - Create Commit Message"
+      "name": "Git - Create Commit Message",
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -231,7 +233,8 @@
       "position": [-1184, 896],
       "id": "534f9784-00fc-40d3-b033-e4c28ec93c86",
       "name": "Git - Update Remote Repo",
-      "executeOnce": true
+      "executeOnce": true,
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -242,7 +245,8 @@
       "typeVersion": 1,
       "position": [-832, 144],
       "id": "37be783f-fc8a-435e-bbcd-b6f1b773b995",
-      "name": "Git - Update Local Repo"
+      "name": "Git - Update Local Repo",
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -256,7 +260,8 @@
       "typeVersion": 1,
       "position": [-992, 0],
       "id": "9a6e4b2d-a639-4fd6-bda6-6ba26cc15034",
-      "name": "Git - Add Config Name"
+      "name": "Git - Add Config Name",
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -270,7 +275,8 @@
       "typeVersion": 1,
       "position": [-640, 0],
       "id": "09148f82-8e53-41e1-92cc-c39daedaf01a",
-      "name": "Git - Add Config E-Mail"
+      "name": "Git - Add Config E-Mail",
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -579,7 +585,9 @@
       "parameters": {
         "operation": "write",
         "fileName": "={{ $('Globals').item.json.repo.path }}/{{ $('Globals').item.json.content.store_folder }}/{{ $binary.data.fileName }}",
-        "options": {}
+        "options": {
+          "createDir": true
+        }
       },
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
@@ -787,7 +795,7 @@
       "main": [
         [
           {
-            "node": "Read - Input Folder",
+            "node": "Git - Add Config Name",
             "type": "main",
             "index": 0
           }

@@ -1,0 +1,18 @@
+{
+  "course": {
+    "id": "ipcenter:Deutsch A2",
+    "name": "A2",
+    "classes": [
+      {
+        "name": "Reflexive Verben",
+        "description": "Einführung in reflexive Verben (Akkusativ, Dativ, Pronomen und Übungen).",
+        "contentElements": [
+          {
+            "name": "Reflexiverben",
+            "type": "CONTENT"
+          }
+        ]
+      }
+    ]
+  }
+}
