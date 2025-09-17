@@ -1,1 +1,129 @@
-[{"course":{"id":"25abb7f1-b449-79a5-93ad-0bb6f8347e9c","name":"A2","classes":[{"id":"5511b12e-abd1-74fc-ace3-c7f4914215bc","name":"Relativsätze Nominativ Akkusativ","description":"Lerne Relativsätze im Nominativ und Akkusativ zu bilden und anzuwenden.","contentElements":[{"name":"Einführung in Relativsätze","type":"CONTENT","content":"Ein Relativsatz ist ein Nebensatz, der mehr Informationen zu einem Nomen im Hauptsatz gibt. Relativsätze beginnen mit Relativpronomen wie: der, die, das, den, dem. Sie verbinden Sätze und fassen Informationen zusammen.","task":null},{"name":"Relativsätze im Nominativ","type":"CONTENT","content":"Relativsätze im Nominativ werden verwendet, wenn das Nomen im Relativsatz das Subjekt ist. Beispiele: Der Mann, der nebenan wohnt, ist mein Nachbar. Die Frau, die singt, ist meine Lehrerin. Das Kind, das lacht, ist mein Bruder.","task":null},{"name":"Relativsätze im Akkusativ","type":"CONTENT","content":"Relativsätze im Akkusativ werden verwendet, wenn das Nomen im Relativsatz das Objekt ist. Beispiele: Ich kenne den Mann, den ich oft sehe. Das ist die Frau, die ich oft sehe. Das Auto, das du kaufst, ist neu.","task":null},{"name":"Übung: Lückentext – Relativpronomen einsetzen","type":"CONTENT","content":"Setze das richtige Relativpronomen ein.","task":{"taskDescription":"Fülle die Lücken mit dem passenden Relativpronomen.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"Das ist der Mann, {{INSERT}} hier arbeitet.","correctSentence":"Das ist der Mann, {{der}} hier arbeitet."},{"fillSentence":"Ich sehe das Auto, {{INSERT}} sie gekauft hat.","correctSentence":"Ich sehe das Auto, {{das}} sie gekauft hat."},{"fillSentence":"Kennst du die Frau, {{INSERT}} vor dem Supermarkt steht?","correctSentence":"Kennst du die Frau, {{die}} vor dem Supermarkt steht?"},{"fillSentence":"Das ist der Roman, {{INSERT}} ich gestern gelesen habe.","correctSentence":"Das ist der Roman, {{den}} ich gestern gelesen habe."},{"fillSentence":"Er kennt den Lehrer, {{INSERT}} immer Witze macht.","correctSentence":"Er kennt den Lehrer, {{der}} immer Witze macht."}],"fillWords":["der","das","die","den","der"]}}},{"name":"Übung: Sätze verbinden","type":"CONTENT","content":"Verbinde die Sätze mit einem Relativsatz.","task":{"taskDescription":"Verbinde die Sätze mit einem Relativsatz.","task":{"type":"sentence-puzzle","sentences":[{"fillSentence":"Das Kind spielt im Garten. Es trägt eine Mütze.","correctSentence":"Das Kind, das eine Mütze trägt, spielt im Garten."},{"fillSentence":"Der Hund bellt. Er ist laut.","correctSentence":"Der Hund, der bellt, ist laut."},{"fillSentence":"Ich sehe den Film. Der Film ist spannend.","correctSentence":"Der Film, den ich sehe, ist spannend."}],"fillWords":[]}}},{"name":"Mini-Diktat","type":"CONTENT","content":"Das ist der Lehrer, der sehr freundlich ist. Ich sehe einen Film, den ich schon kenne. Wir besuchen eine Stadt, die sehr alt ist. Du kennst den Mann, der im Park joggt. Ich esse einen Kuchen, den meine Mutter gebacken hat.","task":{"taskDescription":"Fülle die Lücken im Diktat.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"Das ist der Lehrer, {{INSERT}} sehr freundlich ist.","correctSentence":"Das ist der Lehrer, {{der}} sehr freundlich ist."},{"fillSentence":"Ich sehe einen Film, {{INSERT}} ich schon kenne.","correctSentence":"Ich sehe einen Film, {{den}} ich schon kenne."},{"fillSentence":"Wir besuchen eine Stadt, {{INSERT}} sehr alt ist.","correctSentence":"Wir besuchen eine Stadt, {{die}} sehr alt ist."},{"fillSentence":"Du kennst den Mann, {{INSERT}} im Park joggt.","correctSentence":"Du kennst den Mann, {{der}} im Park joggt."},{"fillSentence":"Ich esse einen Kuchen, {{INSERT}} meine Mutter gebacken hat.","correctSentence":"Ich esse einen Kuchen, {{den}} meine Mutter gebacken hat."}],"fillWords":["der","den","die","der","den"]}}}]}]}}]
+[
+  {
+    "course": {
+      "id": "25abb7f1-b449-79a5-93ad-0bb6f8347e9c",
+      "name": "A2",
+      "classes": [
+        {
+          "id": "5511b12e-abd1-74fc-ace3-c7f4914215bc",
+          "name": "Relativsätze Nominativ Akkusativ",
+          "description": "Lerne Relativsätze im Nominativ und Akkusativ zu bilden und anzuwenden.",
+          "contentElements": [
+            {
+              "name": "Einführung in Relativsätze",
+              "type": "CONTENT",
+              "content": "Ein Relativsatz ist ein Nebensatz, der mehr Informationen zu einem Nomen im Hauptsatz gibt. Relativsätze beginnen mit Relativpronomen wie: der, die, das, den, dem. Sie verbinden Sätze und fassen Informationen zusammen.",
+              "task": null
+            },
+            {
+              "name": "Relativsätze im Nominativ",
+              "type": "CONTENT",
+              "content": "Relativsätze im Nominativ werden verwendet, wenn das Nomen im Relativsatz das Subjekt ist. Beispiele: Der Mann, der nebenan wohnt, ist mein Nachbar. Die Frau, die singt, ist meine Lehrerin. Das Kind, das lacht, ist mein Bruder.",
+              "task": null
+            },
+            {
+              "name": "Relativsätze im Akkusativ",
+              "type": "CONTENT",
+              "content": "Relativsätze im Akkusativ werden verwendet, wenn das Nomen im Relativsatz das Objekt ist. Beispiele: Ich kenne den Mann, den ich oft sehe. Das ist die Frau, die ich oft sehe. Das Auto, das du kaufst, ist neu.",
+              "task": null
+            },
+            {
+              "name": "Übung: Lückentext – Relativpronomen einsetzen",
+              "type": "CONTENT",
+              "content": "Setze das richtige Relativpronomen ein.",
+              "task": {
+                "taskDescription": "Fülle die Lücken mit dem passenden Relativpronomen.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "Das ist der Mann, {{INSERT}} hier arbeitet.",
+                      "correctSentence": "Das ist der Mann, {{der}} hier arbeitet."
+                    },
+                    {
+                      "fillSentence": "Ich sehe das Auto, {{INSERT}} sie gekauft hat.",
+                      "correctSentence": "Ich sehe das Auto, {{das}} sie gekauft hat."
+                    },
+                    {
+                      "fillSentence": "Kennst du die Frau, {{INSERT}} vor dem Supermarkt steht?",
+                      "correctSentence": "Kennst du die Frau, {{die}} vor dem Supermarkt steht?"
+                    },
+                    {
+                      "fillSentence": "Das ist der Roman, {{INSERT}} ich gestern gelesen habe.",
+                      "correctSentence": "Das ist der Roman, {{den}} ich gestern gelesen habe."
+                    },
+                    {
+                      "fillSentence": "Er kennt den Lehrer, {{INSERT}} immer Witze macht.",
+                      "correctSentence": "Er kennt den Lehrer, {{der}} immer Witze macht."
+                    }
+                  ],
+                  "fillWords": ["der", "das", "die", "den", "der"]
+                }
+              }
+            },
+            {
+              "name": "Übung: Sätze verbinden",
+              "type": "CONTENT",
+              "content": "Verbinde die Sätze mit einem Relativsatz.",
+              "task": {
+                "taskDescription": "Verbinde die Sätze mit einem Relativsatz.",
+                "task": {
+                  "type": "sentence-puzzle",
+                  "sentences": [
+                    {
+                      "fillSentence": "Das Kind spielt im Garten. Es trägt eine Mütze.",
+                      "correctSentence": "Das Kind, das eine Mütze trägt, spielt im Garten."
+                    },
+                    {
+                      "fillSentence": "Der Hund bellt. Er ist laut.",
+                      "correctSentence": "Der Hund, der bellt, ist laut."
+                    },
+                    {
+                      "fillSentence": "Ich sehe den Film. Der Film ist spannend.",
+                      "correctSentence": "Der Film, den ich sehe, ist spannend."
+                    }
+                  ],
+                  "fillWords": []
+                }
+              }
+            },
+            {
+              "name": "Mini-Diktat",
+              "type": "CONTENT",
+              "content": "Das ist der Lehrer, der sehr freundlich ist. Ich sehe einen Film, den ich schon kenne. Wir besuchen eine Stadt, die sehr alt ist. Du kennst den Mann, der im Park joggt. Ich esse einen Kuchen, den meine Mutter gebacken hat.",
+              "task": {
+                "taskDescription": "Fülle die Lücken im Diktat.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "Das ist der Lehrer, {{INSERT}} sehr freundlich ist.",
+                      "correctSentence": "Das ist der Lehrer, {{der}} sehr freundlich ist."
+                    },
+                    {
+                      "fillSentence": "Ich sehe einen Film, {{INSERT}} ich schon kenne.",
+                      "correctSentence": "Ich sehe einen Film, {{den}} ich schon kenne."
+                    },
+                    {
+                      "fillSentence": "Wir besuchen eine Stadt, {{INSERT}} sehr alt ist.",
+                      "correctSentence": "Wir besuchen eine Stadt, {{die}} sehr alt ist."
+                    },
+                    {
+                      "fillSentence": "Du kennst den Mann, {{INSERT}} im Park joggt.",
+                      "correctSentence": "Du kennst den Mann, {{der}} im Park joggt."
+                    },
+                    {
+                      "fillSentence": "Ich esse einen Kuchen, {{INSERT}} meine Mutter gebacken hat.",
+                      "correctSentence": "Ich esse einen Kuchen, {{den}} meine Mutter gebacken hat."
+                    }
+                  ],
+                  "fillWords": ["der", "den", "die", "der", "den"]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

@@ -1,1 +1,125 @@
-[{"course":{"id":"25abb7f1-b449-79a5-93ad-0bb6f8347e9c","name":"A2","classes":[{"id":"aedead89-8a7b-7bd0-a5e6-06b530368cd3","name":"Fragewörter Präpositionalpronomen","description":"Einführung in die Verwendung von Präpositionalpronomen in Fragen und Antworten.","contentElements":[{"name":"Einführung in Präpositionalpronomen","type":"CONTENT","content":"Präpositionalpronomen werden verwendet, um nach Dingen zu fragen, die mit einer Präposition stehen, oder um kurz auf solche Fragen zu antworten. Bei Fragen nach Dingen verwendet man 'wo(r)' + Präposition (z.B. woran, worauf). Bei Personen verwendet man die Präposition + 'wer' im Kasus (z.B. mit wem, an wen).","task":null},{"name":"Beispiele für Fragen mit Präpositionalpronomen","type":"CONTENT","content":"Beispiele: Worauf wartest du? – Ich warte auf den Bus. Woran denkst du? - Ich denke an die Prüfung. Mit wem sprichst du? - Ich spreche mit Julia.","task":null},{"name":"Antworten mit Präpositionalpronomen","type":"CONTENT","content":"Bei Antworten auf Fragen nach Dingen verwendet man 'da(r)' + Präposition (z.B. daran, darauf). Bei Personen verwendet man die Präposition + Person (z.B. an Mila, auf dich).","task":null},{"name":"Übung: Fragewörter einsetzen","type":"CONTENT","content":"Setze das passende Fragewort ein: 1. ________ warten die beiden? 2. ________ sprichst du? 3. ________ denkst du gerade? 4. ________ ärgert er sich so sehr? 5. ________ interessieren sich deine Freunde? 6. ________ schreibst du in der Schule?","task":{"taskDescription":"Setze das passende Fragewort ein.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"1. {{INSERT}} warten die beiden?","correctSentence":"1. {{Worauf}} warten die beiden?"},{"fillSentence":"2. {{INSERT}} sprichst du?","correctSentence":"2. {{Worüber}} sprichst du?"},{"fillSentence":"3. {{INSERT}} denkst du gerade?","correctSentence":"3. {{Woran}} denkst du gerade?"},{"fillSentence":"4. {{INSERT}} ärgert er sich so sehr?","correctSentence":"4. {{Worüber}} ärgert er sich so sehr?"},{"fillSentence":"5. {{INSERT}} interessieren sich deine Freunde?","correctSentence":"5. {{Wofür}} interessieren sich deine Freunde?"},{"fillSentence":"6. {{INSERT}} schreibst du in der Schule?","correctSentence":"6. {{Womit}} schreibst du in der Schule?"}],"fillWords":["Worauf","Worüber","Woran","Worüber","Wofür","Womit"]}}},{"name":"Übung: Fehler finden und korrigieren","type":"CONTENT","content":"Finde und korrigiere die Fehler in den folgenden Sätzen: 1. An was denkst du? 2. Was für Musik interessierst du dich? 3. Mit was telefonierst du? (Person ist gemeint) 4. Worüber du sprichst? 5. Was wartest du? 6. An wem erinnerst du dich?","task":{"taskDescription":"Korrigiere die Fehler in den Sätzen.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"1. {{INSERT}} denkst du?","correctSentence":"1. {{Woran}} denkst du?"},{"fillSentence":"2. {{INSERT}} interessierst du dich?","correctSentence":"2. {{Wofür}} interessierst du dich?"},{"fillSentence":"3. {{INSERT}} telefonierst du?","correctSentence":"3. {{Mit wem}} telefonierst du?"},{"fillSentence":"4. {{INSERT}} sprichst du?","correctSentence":"4. {{Worüber}} sprichst du?"},{"fillSentence":"5. {{INSERT}} wartest du?","correctSentence":"5. {{Worauf}} wartest du?"},{"fillSentence":"6. {{INSERT}} erinnerst du dich?","correctSentence":"6. {{An wen}} erinnerst du dich?"}],"fillWords":["Woran","Wofür","Mit wem","Worüber","Worauf","An wen"]}}}]}]}}]
+[
+  {
+    "course": {
+      "id": "25abb7f1-b449-79a5-93ad-0bb6f8347e9c",
+      "name": "A2",
+      "classes": [
+        {
+          "id": "aedead89-8a7b-7bd0-a5e6-06b530368cd3",
+          "name": "Fragewörter Präpositionalpronomen",
+          "description": "Einführung in die Verwendung von Präpositionalpronomen in Fragen und Antworten.",
+          "contentElements": [
+            {
+              "name": "Einführung in Präpositionalpronomen",
+              "type": "CONTENT",
+              "content": "Präpositionalpronomen werden verwendet, um nach Dingen zu fragen, die mit einer Präposition stehen, oder um kurz auf solche Fragen zu antworten. Bei Fragen nach Dingen verwendet man 'wo(r)' + Präposition (z.B. woran, worauf). Bei Personen verwendet man die Präposition + 'wer' im Kasus (z.B. mit wem, an wen).",
+              "task": null
+            },
+            {
+              "name": "Beispiele für Fragen mit Präpositionalpronomen",
+              "type": "CONTENT",
+              "content": "Beispiele: Worauf wartest du? – Ich warte auf den Bus. Woran denkst du? - Ich denke an die Prüfung. Mit wem sprichst du? - Ich spreche mit Julia.",
+              "task": null
+            },
+            {
+              "name": "Antworten mit Präpositionalpronomen",
+              "type": "CONTENT",
+              "content": "Bei Antworten auf Fragen nach Dingen verwendet man 'da(r)' + Präposition (z.B. daran, darauf). Bei Personen verwendet man die Präposition + Person (z.B. an Mila, auf dich).",
+              "task": null
+            },
+            {
+              "name": "Übung: Fragewörter einsetzen",
+              "type": "CONTENT",
+              "content": "Setze das passende Fragewort ein: 1. ________ warten die beiden? 2. ________ sprichst du? 3. ________ denkst du gerade? 4. ________ ärgert er sich so sehr? 5. ________ interessieren sich deine Freunde? 6. ________ schreibst du in der Schule?",
+              "task": {
+                "taskDescription": "Setze das passende Fragewort ein.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "1. {{INSERT}} warten die beiden?",
+                      "correctSentence": "1. {{Worauf}} warten die beiden?"
+                    },
+                    {
+                      "fillSentence": "2. {{INSERT}} sprichst du?",
+                      "correctSentence": "2. {{Worüber}} sprichst du?"
+                    },
+                    {
+                      "fillSentence": "3. {{INSERT}} denkst du gerade?",
+                      "correctSentence": "3. {{Woran}} denkst du gerade?"
+                    },
+                    {
+                      "fillSentence": "4. {{INSERT}} ärgert er sich so sehr?",
+                      "correctSentence": "4. {{Worüber}} ärgert er sich so sehr?"
+                    },
+                    {
+                      "fillSentence": "5. {{INSERT}} interessieren sich deine Freunde?",
+                      "correctSentence": "5. {{Wofür}} interessieren sich deine Freunde?"
+                    },
+                    {
+                      "fillSentence": "6. {{INSERT}} schreibst du in der Schule?",
+                      "correctSentence": "6. {{Womit}} schreibst du in der Schule?"
+                    }
+                  ],
+                  "fillWords": [
+                    "Worauf",
+                    "Worüber",
+                    "Woran",
+                    "Worüber",
+                    "Wofür",
+                    "Womit"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Übung: Fehler finden und korrigieren",
+              "type": "CONTENT",
+              "content": "Finde und korrigiere die Fehler in den folgenden Sätzen: 1. An was denkst du? 2. Was für Musik interessierst du dich? 3. Mit was telefonierst du? (Person ist gemeint) 4. Worüber du sprichst? 5. Was wartest du? 6. An wem erinnerst du dich?",
+              "task": {
+                "taskDescription": "Korrigiere die Fehler in den Sätzen.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "1. {{INSERT}} denkst du?",
+                      "correctSentence": "1. {{Woran}} denkst du?"
+                    },
+                    {
+                      "fillSentence": "2. {{INSERT}} interessierst du dich?",
+                      "correctSentence": "2. {{Wofür}} interessierst du dich?"
+                    },
+                    {
+                      "fillSentence": "3. {{INSERT}} telefonierst du?",
+                      "correctSentence": "3. {{Mit wem}} telefonierst du?"
+                    },
+                    {
+                      "fillSentence": "4. {{INSERT}} sprichst du?",
+                      "correctSentence": "4. {{Worüber}} sprichst du?"
+                    },
+                    {
+                      "fillSentence": "5. {{INSERT}} wartest du?",
+                      "correctSentence": "5. {{Worauf}} wartest du?"
+                    },
+                    {
+                      "fillSentence": "6. {{INSERT}} erinnerst du dich?",
+                      "correctSentence": "6. {{An wen}} erinnerst du dich?"
+                    }
+                  ],
+                  "fillWords": [
+                    "Woran",
+                    "Wofür",
+                    "Mit wem",
+                    "Worüber",
+                    "Worauf",
+                    "An wen"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

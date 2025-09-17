@@ -1,12 +1,12 @@
 {
-  "name": "PDF to JSON Pipeline - ipcenter",
+  "name": "AI-PALS - Content Pipeline",
   "nodes": [
     {
       "parameters": {},
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
-      "position": [-1552, 128],
-      "id": "51731431-4f90-4124-8d34-b502d3395431",
+      "position": [-1536, -944],
+      "id": "bfcf60bf-44d5-41ef-b958-207fcf04c9b8",
       "name": "When clicking 'Execute workflow'"
     },
     {
@@ -24,12 +24,12 @@
       },
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
-      "position": [-400, 880],
-      "id": "f773ec27-4c1c-47ea-b467-ffd960a6352f",
+      "position": [-384, -192],
+      "id": "d9f6a044-ecda-4fdb-8a6c-2bf8d6052726",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
-          "id": "6ziwAuMwRri7ndTp",
+          "id": "nvty8aVBxFEbOqKY",
           "name": "OpenAi account"
         }
       }
@@ -41,8 +41,8 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [-576, 672],
-      "id": "690c5a14-c68c-43b4-9e01-3f1f28ff978c",
+      "position": [-560, -400],
+      "id": "456612e4-ba2f-40f8-976f-d6bb673c95b3",
       "name": "Function - Build Prompts"
     },
     {
@@ -54,12 +54,12 @@
       },
       "type": "n8n-nodes-base.git",
       "typeVersion": 1,
-      "position": [-1184, 128],
-      "id": "2a8f503b-9f45-41e2-8c83-5d86ef64302a",
+      "position": [-1168, -944],
+      "id": "95dffab8-2ded-4b77-9364-c349b4b9f214",
       "name": "Git - Clone",
       "credentials": {
         "gitPassword": {
-          "id": "UkoDDNJTnYMB9h8t",
+          "id": "mB1vJ1WX5L2lwVSY",
           "name": "Git account"
         }
       },
@@ -99,8 +99,8 @@
       },
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [-832, 480],
-      "id": "a20f6391-4057-4ae2-986b-ebb9ac6071ce",
+      "position": [-816, -592],
+      "id": "05013011-3dae-44c7-a12b-f067c6fc5459",
       "name": "Get Only Text - Git"
     },
     {
@@ -116,8 +116,8 @@
       },
       "type": "n8n-nodes-base.sort",
       "typeVersion": 1,
-      "position": [-1184, 480],
-      "id": "b9300025-ebe5-4aad-868a-1c88c27e8183",
+      "position": [-1168, -592],
+      "id": "013280dd-c5eb-4776-9778-a2801371a1c4",
       "name": "Sort - By FileName - Git"
     },
     {
@@ -166,8 +166,8 @@
       },
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [-1360, 128],
-      "id": "7e582b53-837f-4d32-9199-63544d26344b",
+      "position": [-1344, -944],
+      "id": "d4ddb963-d620-4dfa-9e27-616f9139b04f",
       "name": "Globals"
     },
     {
@@ -177,8 +177,8 @@
       },
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
-      "position": [-464, 144],
-      "id": "7becf9a5-b764-401d-b6b2-30785d9ed4bc",
+      "position": [-448, -928],
+      "id": "17e85f82-774c-48c8-b38f-1b1c12b52f92",
       "name": "Read - Input Folder",
       "executeOnce": true
     },
@@ -191,8 +191,8 @@
       },
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
-      "position": [-256, 144],
-      "id": "c01cbdff-dc53-49b6-b2d3-38cf133d0cd8",
+      "position": [-240, -928],
+      "id": "fa952c2e-1330-45aa-8b7b-1ee7851e2c8f",
       "name": "Extract from File - PDF"
     },
     {
@@ -203,8 +203,8 @@
       },
       "type": "n8n-nodes-base.git",
       "typeVersion": 1,
-      "position": [-464, 1072],
-      "id": "1cb2107e-1809-4db6-b4df-b4eb3d90bc6c",
+      "position": [-448, 16],
+      "id": "d0925c2b-ea4b-4b84-baf3-357bf0ff49ae",
       "name": "Git - Add New File",
       "onError": "continueErrorOutput"
     },
@@ -217,23 +217,30 @@
       },
       "type": "n8n-nodes-base.git",
       "typeVersion": 1,
-      "position": [-256, 1072],
-      "id": "19036cbd-fc96-40b1-986d-a90a8e9398ab",
+      "position": [-240, 16],
+      "id": "a51def70-da9d-42d9-8a95-b86d0a298a8c",
       "name": "Git - Create Commit Message",
       "onError": "continueErrorOutput"
     },
     {
       "parameters": {
+        "authentication": "gitPassword",
         "operation": "push",
         "repositoryPath": "={{ $('Globals').item.json.repo.path }}",
         "options": {}
       },
       "type": "n8n-nodes-base.git",
       "typeVersion": 1,
-      "position": [-1184, 896],
-      "id": "534f9784-00fc-40d3-b033-e4c28ec93c86",
+      "position": [-1168, -176],
+      "id": "8160d82b-5f55-40e8-8b9f-3f0435f79205",
       "name": "Git - Update Remote Repo",
-      "executeOnce": true
+      "executeOnce": true,
+      "credentials": {
+        "gitPassword": {
+          "id": "mB1vJ1WX5L2lwVSY",
+          "name": "Git account"
+        }
+      }
     },
     {
       "parameters": {
@@ -242,8 +249,8 @@
       },
       "type": "n8n-nodes-base.git",
       "typeVersion": 1,
-      "position": [-832, 144],
-      "id": "37be783f-fc8a-435e-bbcd-b6f1b773b995",
+      "position": [-816, -928],
+      "id": "f2816e31-9fa6-4800-9d6c-6549c199b63c",
       "name": "Git - Update Local Repo",
       "onError": "continueErrorOutput"
     },
@@ -257,8 +264,8 @@
       },
       "type": "n8n-nodes-base.git",
       "typeVersion": 1,
-      "position": [-992, 0],
-      "id": "9a6e4b2d-a639-4fd6-bda6-6ba26cc15034",
+      "position": [-976, -1072],
+      "id": "301b3bb0-12c2-4696-a812-c0f0569dc924",
       "name": "Git - Add Config Name",
       "onError": "continueErrorOutput"
     },
@@ -272,62 +279,10 @@
       },
       "type": "n8n-nodes-base.git",
       "typeVersion": 1,
-      "position": [-640, 0],
-      "id": "09148f82-8e53-41e1-92cc-c39daedaf01a",
+      "position": [-624, -1072],
+      "id": "0ef72c45-ca78-43b3-8e0a-de5fe13f2744",
       "name": "Git - Add Config E-Mail",
       "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "content": "## Read Current Content Folder and what files are already converted to json",
-        "height": 288,
-        "width": 480,
-        "color": 6
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [80, -16],
-      "typeVersion": 1,
-      "id": "69ba105b-962b-47c6-aca6-7e9e99442b17",
-      "name": "Sticky Note"
-    },
-    {
-      "parameters": {
-        "content": "## Filter what Course Content Already exist and when not run LLM else will add it to the final output later",
-        "height": 272,
-        "width": 480,
-        "color": 6
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [80, 336],
-      "typeVersion": 1,
-      "id": "359e1121-f8e1-4930-a03e-320c7a2a936b",
-      "name": "Sticky Note1"
-    },
-    {
-      "parameters": {
-        "content": "## Combine All Course Elements into one File",
-        "height": 128,
-        "width": 480,
-        "color": 6
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [80, 1376],
-      "typeVersion": 1,
-      "id": "5577fd3b-7ee8-41a3-ba5e-712917fd7762",
-      "name": "Sticky Note3"
-    },
-    {
-      "parameters": {
-        "content": "## Store Course Element into Git Repo\n\n- Loop -> done disconnected for Testing that it not push the json files into the Remote Git Repo",
-        "height": 128,
-        "width": 480,
-        "color": 6
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [80, 1056],
-      "typeVersion": 1,
-      "id": "70328127-b62b-42d2-9358-7ce69c8d6c82",
-      "name": "Sticky Note2"
     },
     {
       "parameters": {
@@ -351,18 +306,18 @@
       },
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [-1184, 1072],
-      "id": "d43be27e-80ba-421d-a75a-9dc236911d41",
+      "position": [-1168, 16],
+      "id": "8c13bf13-b6ea-4f25-adee-22e2d27fba9d",
       "name": "Set Fields To Store"
     },
     {
       "parameters": {
-        "jsCode": "// Normalize item to updated schema per file\nconst COURSE_ID = $('Globals').first().json.course.id;\nconst COURSE_NAME = $('Globals').first().json.course.name;\n\nconst file = $json.file || {};\nconst elements = Array.isArray($json.contentElement)\n  ? $json.contentElement\n  : (Array.isArray($json.contentElements) ? $json.contentElements : []);\n\n// Extract class name from PDF filename (remove numbers and extension)\nconst className = file.name || '';\n\nconst classes = [{\n  name: className,  // Use filename as class name (also serves as ID)\n  description: file.description || '',\n  contentElements: elements.map((ce, idx) => ({\n    name: ce.name || `Content ${idx + 1}`,  // Use name as ID\n    type: ce.type || 'CONTENT',\n    content: ce.content || '',\n    task: ce.task || null\n  }))\n}];\n\nreturn [{\n  json: {\n    course: {\n      id: COURSE_ID,\n      name: COURSE_NAME,\n      classes\n    }\n  }\n}];\n"
+        "jsCode": "// Normalize item to updated schema per file\n// Deterministic UUIDv7 generation without external modules (seeded PRNG)\nfunction xmur3(str){ let h = 1779033703 ^ str.length; for (let i=0; i<str.length; i++){ h = Math.imul(h ^ str.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); } return function(){ h = Math.imul(h ^ (h >>> 16), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return (h ^= h >>> 16) >>> 0; }; }\nfunction sfc32(a,b,c,d){ return function(){ a >>>= 0; b >>>= 0; c >>>= 0; d >>>= 0; let t = (a + b) | 0; t = (t + d) | 0; d = (d + 1) | 0; a = b ^ (b >>> 9); b = (c + (c << 3) | 0) | 0; c = (c << 21 | c >>> 11); c = (c + t) | 0; return (t >>> 0) / 4294967296; }; }\nfunction uuidv7FromString(input){ const seed = xmur3(String(input)); const rand = sfc32(seed(), seed(), seed(), seed()); const b = new Uint8Array(16); for (let i=0; i<16; i++){ b[i] = Math.floor(rand()*256) & 0xff; } // set version 7 and RFC 4122 variant\n b[6] = (b[6] & 0x0f) | 0x70; b[8] = (b[8] & 0x3f) | 0x80; const hex = Array.from(b, x => x.toString(16).padStart(2,'0')).join(''); return hex.slice(0,8)+'-'+hex.slice(8,12)+'-'+hex.slice(12,16)+'-'+hex.slice(16,20)+'-'+hex.slice(20); }\n\nconst COURSE_NAME = $('Globals').first().json.course.name;\nconst PROVIDER = 'ipcenter';\nconst COURSE_ID = uuidv7FromString(`course|${PROVIDER}|${COURSE_NAME}`);\n\nconst file = $json.file || {};\nconst elements = Array.isArray($json.contentElement)\n  ? $json.contentElement\n  : (Array.isArray($json.contentElements) ? $json.contentElements : []);\n\nconst className = file.name || '';\nconst classId = uuidv7FromString(`class|${COURSE_ID}|${className}`);\n\nconst classes = [{\n  id: classId,\n  name: className,\n  description: file.description || '',\n  contentElements: elements.map((ce, idx) => ({\n    name: ce.name || `Content ${idx + 1}`,\n    type: ce.type || 'CONTENT',\n    content: ce.content || '',\n    task: ce.task || null\n  }))\n}];\n\nreturn [{\n  json: {\n    course: {\n      id: COURSE_ID,\n      name: COURSE_NAME,\n      classes\n    }\n  }\n}];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [-1088, 1072],
-      "id": "da682860-83ec-4349-9643-1d2c0575ed9f",
+      "position": [-1072, 16],
+      "id": "af0f1274-2fbc-429b-bbe6-f5a286ee2ebf",
       "name": "Normalize To Course Schema"
     },
     {
@@ -382,8 +337,8 @@
       },
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [-96, 672],
-      "id": "5172de6f-3fe4-400b-830b-7b814bc08a2c",
+      "position": [-80, -400],
+      "id": "27b3e79a-8c8e-438e-b7b5-020ad3882bde",
       "name": "Add File Field to LLM Response"
     },
     {
@@ -392,8 +347,8 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [-1376, 656],
-      "id": "995f1a1c-7333-43db-88c4-a0942411b7bf",
+      "position": [-1360, -416],
+      "id": "3cac46cd-0a41-4432-b854-cf3bdf165d08",
       "name": "Add Meta Data if File exist and Cleanup"
     },
     {
@@ -403,8 +358,8 @@
       },
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
-      "position": [-992, 336],
-      "id": "6654f21a-6765-42e5-97fe-66995537bead",
+      "position": [-976, -736],
+      "id": "bf6b4846-127e-4192-81fd-a10d504a6c6c",
       "name": "Read - Already Converted Content",
       "executeOnce": true,
       "alwaysOutputData": true
@@ -418,8 +373,8 @@
       },
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
-      "position": [-832, 336],
-      "id": "9d84cd52-4242-429b-86f0-d832902d6b13",
+      "position": [-816, -736],
+      "id": "8570a6e5-7907-40a1-a1e9-70f8c3f44975",
       "name": "Extract JSON from Already Converted Content",
       "alwaysOutputData": true
     },
@@ -445,8 +400,8 @@
       },
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [-640, 336],
-      "id": "10f6318c-a90d-4f35-b881-a793ae1f26e4",
+      "position": [-624, -736],
+      "id": "c0f4d957-c343-4709-a257-76bf0022d621",
       "name": "Add File Name to Converted Content",
       "alwaysOutputData": true
     },
@@ -458,8 +413,8 @@
       },
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
-      "position": [-464, 336],
-      "id": "84bf972a-2719-4719-b832-fcf6a1388947",
+      "position": [-448, -736],
+      "id": "8bca0c36-0f07-4c4d-ad30-b630d41e5c21",
       "name": "Aggregate - All Files into exist_data"
     },
     {
@@ -470,16 +425,16 @@
       },
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
-      "position": [-464, 480],
-      "id": "2f9c3d09-46cd-4acc-a926-216e67024bb4",
+      "position": [-448, -592],
+      "id": "6f4eea4a-5161-4b5a-a3a4-34242135ac33",
       "name": "Aggregate - All PDF Content to content_data"
     },
     {
       "parameters": {},
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
-      "position": [-256, 464],
-      "id": "ade0e182-db48-47b9-b3f1-432022a209d1",
+      "position": [-240, -608],
+      "id": "06bb9f3c-2a33-4a30-9ea1-d7a14b809d08",
       "name": "Merge - Existing and Course Content together"
     },
     {
@@ -489,8 +444,8 @@
       },
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
-      "position": [-1184, 656],
-      "id": "5444b7e7-f83d-46cb-a3fe-fa6dab9ebb19",
+      "position": [-1168, -416],
+      "id": "84ef4a0c-1eae-4a0d-ae38-e501bd030c2a",
       "name": "Split Out - content_data to Check all Items"
     },
     {
@@ -521,8 +476,8 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [-992, 656],
-      "id": "6eb4c99b-920f-48c1-a21a-2cb736978274",
+      "position": [-976, -416],
+      "id": "4625ac89-0b58-40af-8d9f-e5e626fdd789",
       "name": "If - File Exists is False"
     },
     {
@@ -531,22 +486,9 @@
       },
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
-      "position": [-1360, 1056],
-      "id": "0ad69cd3-5fd7-4274-870b-386e34e9728f",
+      "position": [-1344, -16],
+      "id": "910c1659-8cab-4eb6-90da-da053bed783d",
       "name": "Loop Over Each Generated Content for Storing all in a separate File"
-    },
-    {
-      "parameters": {
-        "content": "## Check if File Exists\n\n- No Exists -> Generate LLM Response\n- Exists -> Add it Later into the Full Course Content\n\n- Limit to 1 for Testing",
-        "height": 208,
-        "width": 480,
-        "color": 6
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [80, 656],
-      "typeVersion": 1,
-      "id": "1fdcdcce-e75b-40a8-9960-e07176edcd85",
-      "name": "Sticky Note4"
     },
     {
       "parameters": {
@@ -563,8 +505,8 @@
       },
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.7,
-      "position": [-400, 672],
-      "id": "5ab7bc64-f421-49c7-b17a-adf5071eaa6d",
+      "position": [-384, -400],
+      "id": "4a2edb8d-34ab-4e27-a386-5c01c5f47782",
       "name": "LLM - Generate Content Element"
     },
     {
@@ -576,22 +518,20 @@
       },
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
-      "position": [-992, 1072],
-      "id": "c7af93bf-93e1-4d27-88f1-938533dc7a77",
+      "position": [-976, 16],
+      "id": "aa5219b4-769a-46f3-84b6-8f50b1fc16db",
       "name": "Convert Content Element to File"
     },
     {
       "parameters": {
         "operation": "write",
         "fileName": "={{ $('Globals').item.json.repo.path }}/{{ $('Globals').item.json.content.store_folder }}/{{ $binary.data.fileName }}",
-        "options": {
-          "createDir": true
-        }
+        "options": {}
       },
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
-      "position": [-736, 1072],
-      "id": "ad5e9a87-5d5c-4885-a0ce-3f07fe092a4e",
+      "position": [-720, 16],
+      "id": "831e07d1-c8d8-45f1-a8db-687d9224249e",
       "name": "Write JSON Files to Disk"
     },
     {
@@ -602,8 +542,8 @@
       },
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
-      "position": [-1376, 1280],
-      "id": "ab9f61c6-8b3c-4ad8-becc-9e0de1a4b514",
+      "position": [-1360, 224],
+      "id": "014c9a45-b3a1-4ea7-b494-431695b8e1b6",
       "name": "Aggregate - All Existing Files"
     },
     {
@@ -614,16 +554,16 @@
       },
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
-      "position": [-1376, 1424],
-      "id": "dc70b49e-c5d9-4110-a887-cdfe28edfc4b",
+      "position": [-1360, 368],
+      "id": "b25b388c-9f49-41d3-8a90-44c1e3305d2a",
       "name": "Aggregate - All the Generated Content"
     },
     {
       "parameters": {},
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
-      "position": [-1152, 1408],
-      "id": "5dda751a-658d-4c4c-8778-47cb34cad03a",
+      "position": [-1136, 352],
+      "id": "871f1473-37d9-4223-8970-87315ab275a2",
       "name": "Merge - Existing and Generated Content Together"
     },
     {
@@ -632,26 +572,26 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [-944, 1408],
-      "id": "7e2472b1-f449-4092-abd7-defa8e70c13b",
+      "position": [-928, 352],
+      "id": "60f44cd6-5fa9-44b9-b331-4b75c7fc2f84",
       "name": "Get All - Content Elements into one List"
     },
     {
       "parameters": {
-        "jsCode": "// Function node: normalize to updated schema\n// {\n//   \"course\": {\n//     \"id\": \"ipcenter:Deutsch A2\",\n//     \"name\": \"A2\",\n//     \"classes\": [\n//       {\n//         \"name\": \"...\",              // class title (also serves as ID)\n//         \"description\": \"...\",       // class description\n//         \"contentElements\": [\n//           { \"name\": \"...\", \"type\": \"CONTENT\", ... }   // content element with name as ID\n//         ]\n//       }\n//     ]\n//   }\n// }\n\n// ---- Config you can change ----\nconst COURSE_ID = $('Globals').first().json.course.id;\nconst COURSE_NAME = $('Globals').first().json.course.name;\n// -------------------------------\n\nconst top = $input.first().json;\n\nfunction wrapAsClass(contentEl, idx, className, classDesc) {\n  // Create content elements without id/order fields\n  const inner = {\n    name: contentEl.name || `Content ${idx + 1}`,\n    type: contentEl.type || 'CONTENT',\n    content: contentEl.content || '',\n    task: contentEl.task || null\n  };\n  \n  return {\n    name: className || contentEl.name || `Class ${idx + 1}`,  // name serves as ID\n    description: classDesc || '',\n    contentElements: [inner]\n  };\n}\n\nlet classes = [];\n\nif (top.contentElements && Array.isArray(top.contentElements)) {\n  // Shape A: [{ course, contentElement }, ...]\n  classes = top.contentElements.map((it, idx) => {\n    const ce = it.contentElement || {};\n    const fmeta = it.file || {};\n    return wrapAsClass(\n      ce,\n      idx,\n      fmeta.name || ce.name,       // class name from element's course meta (preferred)\n      fmeta.description || ''      // class description from element's course meta\n    );\n  });\n\n} else if (top.course && Array.isArray(top.course.classes)) {\n  // Shape B: current result where classes are plain content elements\n  const rootDesc = top.course.description || '';\n  classes = top.course.classes.map((ce, idx) =>\n    // Best available fallback: class name from element, description from root\n    wrapAsClass(ce, idx, ce.name, rootDesc)\n  );\n\n} else {\n  throw new Error('Unsupported input shape. Expected `contentElements[]` or `course.classes[]`.');\n}\n\nreturn [{\n  json: {\n    course: {\n      id: COURSE_ID,\n      name: COURSE_NAME,\n      classes\n    }\n  }\n}];\n"
+        "jsCode": "// Function node: normalize to updated schema and assign stable UUIDv7 IDs\n// {\n//   \"course\": {\n//     \"id\": \"<uuidv7>\",\n//     \"name\": \"A2\",\n//     \"classes\": [\n//       {\n//         \"id\": \"<uuidv7>\",\n//         \"name\": \"...\",\n//         \"description\": \"...\",\n//         \"contentElements\": [ { \"name\": \"...\", \"type\": \"CONTENT\", ... } ]\n//       }\n//     ]\n//   }\n// }\n\nfunction xmur3(str){ let h = 1779033703 ^ str.length; for (let i=0; i<str.length; i++){ h = Math.imul(h ^ str.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); } return function(){ h = Math.imul(h ^ (h >>> 16), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return (h ^= h >>> 16) >>> 0; }; }\nfunction sfc32(a,b,c,d){ return function(){ a >>>= 0; b >>>= 0; c >>>= 0; d >>>= 0; let t = (a + b) | 0; t = (t + d) | 0; d = (d + 1) | 0; a = b ^ (b >>> 9); b = (c + (c << 3) | 0) | 0; c = (c << 21 | c >>> 11); c = (c + t) | 0; return (t >>> 0) / 4294967296; }; }\nfunction uuidv7FromString(input){ const seed = xmur3(String(input)); const rand = sfc32(seed(), seed(), seed(), seed()); const b = new Uint8Array(16); for (let i=0; i<16; i++){ b[i] = Math.floor(rand()*256) & 0xff; } // set version 7 and RFC 4122 variant\n b[6] = (b[6] & 0x0f) | 0x70; b[8] = (b[8] & 0x3f) | 0x80; const hex = Array.from(b, x => x.toString(16).padStart(2,'0')).join(''); return hex.slice(0,8)+'-'+hex.slice(8,12)+'-'+hex.slice(12,16)+'-'+hex.slice(16,20)+'-'+hex.slice(20); }\n\n// ---- Config you can change ----\nconst COURSE_NAME = $('Globals').first().json.course.name;\nconst PROVIDER = 'ipcenter';\nconst COURSE_ID = uuidv7FromString(`course|${PROVIDER}|${COURSE_NAME}`);\n// -------------------------------\n\nconst top = $input.first().json;\n\nfunction wrapAsClass(contentEl, idx, className, classDesc) {\n  const inner = {\n    name: contentEl.name || `Content ${idx + 1}`,\n    type: contentEl.type || 'CONTENT',\n    content: contentEl.content || '',\n    task: contentEl.task || null\n  };\n  const effectiveName = className || contentEl.name || `Class ${idx + 1}`;\n  const classId = uuidv7FromString(`class|${COURSE_ID}|${effectiveName}`);\n  return {\n    id: classId,\n    name: effectiveName,\n    description: classDesc || '',\n    contentElements: [inner]\n  };\n}\n\nlet classes = [];\n\nif (top.contentElements && Array.isArray(top.contentElements)) {\n  // Shape A: items with { contentElement, file_meta? }\n  classes = top.contentElements.map((it, idx) => {\n    const ce = it.contentElement || {};\n    const fmeta = it.file || it.file_meta || {};\n    return wrapAsClass(\n      ce,\n      idx,\n      fmeta.name || ce.name,\n      fmeta.description || ''\n    );\n  });\n\n} else if (top.course && Array.isArray(top.course.classes)) {\n  // Shape B: current result where classes are plain content elements\n  const rootDesc = top.course.description || '';\n  classes = top.course.classes.map((ce, idx) =>\n    wrapAsClass(ce, idx, ce.name, rootDesc)\n  );\n\n} else {\n  throw new Error('Unsupported input shape. Expected `contentElements[]` or `course.classes[]`.');\n}\n\nreturn [{\n  json: {\n    course: {\n      id: COURSE_ID,\n      name: COURSE_NAME,\n      classes\n    }\n  }\n}];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [-736, 1408],
-      "id": "503f9588-5b7f-4e88-8c21-c877e42a71c7",
+      "position": [-720, 352],
+      "id": "8eef6204-b464-4faa-a1ed-67b9b6fa939e",
       "name": "Transform all the Content Elements into the Output format"
     },
     {
       "parameters": {},
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
-      "position": [-768, 720],
-      "id": "b7838327-d41e-4c22-965e-51148c6c2422",
+      "position": [-752, -352],
+      "id": "3fcd8ad9-141f-4381-a640-1211a5046367",
       "name": "Limit"
     }
   ],
@@ -783,7 +723,7 @@
       "main": [
         [
           {
-            "node": "Git - Update Remote Repo",
+            "node": "Loop Over Each Generated Content for Storing all in a separate File",
             "type": "main",
             "index": 0
           }
@@ -1078,11 +1018,11 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "31101489-6aaa-40ef-b77f-c85b31195e15",
+  "versionId": "d1fcb8b0-d4d1-47f7-bbe0-dfb1853dd301",
   "meta": {
     "templateCredsSetupCompleted": true,
-    "instanceId": "5596a7dfd9f37bfbec8611495e5045946d4176cd8be29e0c648b18dc51adfa8e"
+    "instanceId": "f067483c2bc50cc5aea8b8bb21c351d8a8da024c269babd87cc31d150d1aedce"
   },
-  "id": "5umj02eX1vmQY87T",
+  "id": "IjABLrkPDGJ5J0Rz",
   "tags": []
 }

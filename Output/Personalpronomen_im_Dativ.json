@@ -1,1 +1,136 @@
-[{"course":{"id":"25abb7f1-b449-79a5-93ad-0bb6f8347e9c","name":"A2","classes":[{"id":"3e2058d9-4eae-7335-a52b-3394dde249c3","name":"Personalpronomen im Dativ","description":"Lerne die Verwendung von Personalpronomen im Dativ mit Erklärungen und Übungen.","contentElements":[{"name":"Einführung in Personalpronomen im Dativ","type":"CONTENT","content":"Personalpronomen im Dativ ersetzen Personen oder Dinge, die das indirekte Objekt eines Satzes sind. Der Dativ beantwortet die Frage „Wem?“. Beispiel: Ich gebe dem Mann das Buch. → Ich gebe ihm das Buch.","task":null},{"name":"Bildung der Personalpronomen im Dativ","type":"CONTENT","content":"Person Nominativ Dativ Beispiel: ich - mir (Der Lehrer erklärt mir die Regel), du - dir (Ich schenke dir ein Buch), er - ihm (Anna hilft ihm beim Umzug), sie (Sg.) - ihr (Paul sagt ihr die Wahrheit), es - ihm (Das Spielzeug gefällt ihm nicht), wir - uns (Er bringt uns die Tickets), ihr - euch (Ich zeige euch das Foto), sie (Pl.) - ihnen (Der Hund folgt ihnen nach Hause), Sie (Höflich.) - Ihnen (Kann ich Ihnen helfen?).","task":null},{"name":"Typische Verben mit Dativ","type":"CONTENT","content":"Typische Verben mit Dativ sind: geben (Ich gebe dir den Stift), schenken (Sie hat mir das Kleid geschenkt), zeigen (Wir zeigen Ihnen den Weg), helfen (Er hat euch sehr geholfen), danken (Peter dankt ihm für seine Hilfe), gehören (Mir gehört die Tasche), gefallen (Wie gefällt dir die neue Serie?), erklären (Maria erklärt uns die neuen Aufgaben), glauben (Er glaubt ihr alles), antworten (Warum antwortest du uns nicht?).","task":null},{"name":"Übung: Lückentext","type":"CONTENT","content":"Ergänze das passende Dativpronomen.","task":{"taskDescription":"Fülle die Lücken mit den passenden Dativpronomen aus.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"Ich schenke {{INSERT}} ein Kartenspiel.","correctSentence":"Ich schenke {{ihm}} ein Kartenspiel."},{"fillSentence":"Kannst du {{INSERT}} bitte helfen?","correctSentence":"Kannst du {{mir}} bitte helfen?"},{"fillSentence":"Sie zeigt {{INSERT}} die Wohnung.","correctSentence":"Sie zeigt {{uns}} die Wohnung."},{"fillSentence":"Wir danken {{INSERT}} für das Geschenk.","correctSentence":"Wir danken {{ihr}} für das Geschenk."},{"fillSentence":"Ich gebe {{INSERT}} meine Telefonnummer.","correctSentence":"Ich gebe {{dir}} meine Telefonnummer."}],"fillWords":["ihm","mir","uns","ihr","dir"]}}},{"name":"Übung: Richtig oder Falsch?","type":"CONTENT","content":"Bewerte die Sätze als richtig oder falsch.","task":{"taskDescription":"Entscheide, ob die Sätze korrekt sind.","task":{"type":"true-false","sentences":[{"fillSentence":"Ich helfe euch.","correctSentence":"Ich helfe euch."},{"fillSentence":"Er gibt sie das Buch.","correctSentence":"Er gibt ihr das Buch."},{"fillSentence":"Wir danken ihr.","correctSentence":"Wir danken ihr."},{"fillSentence":"Du zeigst wir das Bild.","correctSentence":"Du zeigst uns das Bild."},{"fillSentence":"Ich höre ihm zu.","correctSentence":"Ich höre ihm zu."}]}}},{"name":"Mini-Diktat","type":"CONTENT","content":"Heute habe ich meinem Bruder ein Geschenk gegeben. Ich habe ihm auch eine Karte geschrieben. Meine Mutter hat mir beim Kochen geholfen. Ich habe ihr dann einen Tee gemacht. Abends hat mein Vater uns ein lustiges Video gezeigt.","task":{"taskDescription":"Fülle die Lücken im Diktat aus.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"Heute habe ich {{INSERT}} Bruder ein Geschenk gegeben.","correctSentence":"Heute habe ich {{meinem}} Bruder ein Geschenk gegeben."},{"fillSentence":"Ich habe {{INSERT}} auch eine Karte geschrieben.","correctSentence":"Ich habe {{ihm}} auch eine Karte geschrieben."},{"fillSentence":"Meine Mutter hat {{INSERT}} beim Kochen geholfen.","correctSentence":"Meine Mutter hat {{mir}} beim Kochen geholfen."},{"fillSentence":"Ich habe {{INSERT}} dann einen Tee gemacht.","correctSentence":"Ich habe {{ihr}} dann einen Tee gemacht."},{"fillSentence":"Abends hat mein Vater {{INSERT}} ein lustiges Video gezeigt.","correctSentence":"Abends hat mein Vater {{uns}} ein lustiges Video gezeigt."}],"fillWords":["meinem","ihm","mir","ihr","uns"]}}}]}]}}]
+[
+  {
+    "course": {
+      "id": "25abb7f1-b449-79a5-93ad-0bb6f8347e9c",
+      "name": "A2",
+      "classes": [
+        {
+          "id": "3e2058d9-4eae-7335-a52b-3394dde249c3",
+          "name": "Personalpronomen im Dativ",
+          "description": "Lerne die Verwendung von Personalpronomen im Dativ mit Erklärungen und Übungen.",
+          "contentElements": [
+            {
+              "name": "Einführung in Personalpronomen im Dativ",
+              "type": "CONTENT",
+              "content": "Personalpronomen im Dativ ersetzen Personen oder Dinge, die das indirekte Objekt eines Satzes sind. Der Dativ beantwortet die Frage „Wem?“. Beispiel: Ich gebe dem Mann das Buch. → Ich gebe ihm das Buch.",
+              "task": null
+            },
+            {
+              "name": "Bildung der Personalpronomen im Dativ",
+              "type": "CONTENT",
+              "content": "Person Nominativ Dativ Beispiel: ich - mir (Der Lehrer erklärt mir die Regel), du - dir (Ich schenke dir ein Buch), er - ihm (Anna hilft ihm beim Umzug), sie (Sg.) - ihr (Paul sagt ihr die Wahrheit), es - ihm (Das Spielzeug gefällt ihm nicht), wir - uns (Er bringt uns die Tickets), ihr - euch (Ich zeige euch das Foto), sie (Pl.) - ihnen (Der Hund folgt ihnen nach Hause), Sie (Höflich.) - Ihnen (Kann ich Ihnen helfen?).",
+              "task": null
+            },
+            {
+              "name": "Typische Verben mit Dativ",
+              "type": "CONTENT",
+              "content": "Typische Verben mit Dativ sind: geben (Ich gebe dir den Stift), schenken (Sie hat mir das Kleid geschenkt), zeigen (Wir zeigen Ihnen den Weg), helfen (Er hat euch sehr geholfen), danken (Peter dankt ihm für seine Hilfe), gehören (Mir gehört die Tasche), gefallen (Wie gefällt dir die neue Serie?), erklären (Maria erklärt uns die neuen Aufgaben), glauben (Er glaubt ihr alles), antworten (Warum antwortest du uns nicht?).",
+              "task": null
+            },
+            {
+              "name": "Übung: Lückentext",
+              "type": "CONTENT",
+              "content": "Ergänze das passende Dativpronomen.",
+              "task": {
+                "taskDescription": "Fülle die Lücken mit den passenden Dativpronomen aus.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "Ich schenke {{INSERT}} ein Kartenspiel.",
+                      "correctSentence": "Ich schenke {{ihm}} ein Kartenspiel."
+                    },
+                    {
+                      "fillSentence": "Kannst du {{INSERT}} bitte helfen?",
+                      "correctSentence": "Kannst du {{mir}} bitte helfen?"
+                    },
+                    {
+                      "fillSentence": "Sie zeigt {{INSERT}} die Wohnung.",
+                      "correctSentence": "Sie zeigt {{uns}} die Wohnung."
+                    },
+                    {
+                      "fillSentence": "Wir danken {{INSERT}} für das Geschenk.",
+                      "correctSentence": "Wir danken {{ihr}} für das Geschenk."
+                    },
+                    {
+                      "fillSentence": "Ich gebe {{INSERT}} meine Telefonnummer.",
+                      "correctSentence": "Ich gebe {{dir}} meine Telefonnummer."
+                    }
+                  ],
+                  "fillWords": ["ihm", "mir", "uns", "ihr", "dir"]
+                }
+              }
+            },
+            {
+              "name": "Übung: Richtig oder Falsch?",
+              "type": "CONTENT",
+              "content": "Bewerte die Sätze als richtig oder falsch.",
+              "task": {
+                "taskDescription": "Entscheide, ob die Sätze korrekt sind.",
+                "task": {
+                  "type": "true-false",
+                  "sentences": [
+                    {
+                      "fillSentence": "Ich helfe euch.",
+                      "correctSentence": "Ich helfe euch."
+                    },
+                    {
+                      "fillSentence": "Er gibt sie das Buch.",
+                      "correctSentence": "Er gibt ihr das Buch."
+                    },
+                    {
+                      "fillSentence": "Wir danken ihr.",
+                      "correctSentence": "Wir danken ihr."
+                    },
+                    {
+                      "fillSentence": "Du zeigst wir das Bild.",
+                      "correctSentence": "Du zeigst uns das Bild."
+                    },
+                    {
+                      "fillSentence": "Ich höre ihm zu.",
+                      "correctSentence": "Ich höre ihm zu."
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Mini-Diktat",
+              "type": "CONTENT",
+              "content": "Heute habe ich meinem Bruder ein Geschenk gegeben. Ich habe ihm auch eine Karte geschrieben. Meine Mutter hat mir beim Kochen geholfen. Ich habe ihr dann einen Tee gemacht. Abends hat mein Vater uns ein lustiges Video gezeigt.",
+              "task": {
+                "taskDescription": "Fülle die Lücken im Diktat aus.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "Heute habe ich {{INSERT}} Bruder ein Geschenk gegeben.",
+                      "correctSentence": "Heute habe ich {{meinem}} Bruder ein Geschenk gegeben."
+                    },
+                    {
+                      "fillSentence": "Ich habe {{INSERT}} auch eine Karte geschrieben.",
+                      "correctSentence": "Ich habe {{ihm}} auch eine Karte geschrieben."
+                    },
+                    {
+                      "fillSentence": "Meine Mutter hat {{INSERT}} beim Kochen geholfen.",
+                      "correctSentence": "Meine Mutter hat {{mir}} beim Kochen geholfen."
+                    },
+                    {
+                      "fillSentence": "Ich habe {{INSERT}} dann einen Tee gemacht.",
+                      "correctSentence": "Ich habe {{ihr}} dann einen Tee gemacht."
+                    },
+                    {
+                      "fillSentence": "Abends hat mein Vater {{INSERT}} ein lustiges Video gezeigt.",
+                      "correctSentence": "Abends hat mein Vater {{uns}} ein lustiges Video gezeigt."
+                    }
+                  ],
+                  "fillWords": ["meinem", "ihm", "mir", "ihr", "uns"]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

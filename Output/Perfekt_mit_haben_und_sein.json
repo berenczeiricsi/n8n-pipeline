@@ -1,1 +1,136 @@
-[{"course":{"id":"25abb7f1-b449-79a5-93ad-0bb6f8347e9c","name":"A2","classes":[{"id":"a3def095-4b5d-7d59-b99b-4efe2f841dbc","name":"Perfekt mit haben und sein","description":"Lerne die Bildung und Anwendung des Perfekts mit den Hilfsverben 'haben' und 'sein'.","contentElements":[{"name":"Einführung in das Perfekt","type":"CONTENT","content":"Das Perfekt ist eine Zeitform, die wir verwenden, um über die Vergangenheit zu sprechen, besonders im gesprochenen Deutsch. Es besteht aus einem Hilfsverb ('haben' oder 'sein') und dem Partizip II.","task":null},{"name":"Bildung des Perfekts mit regelmäßigen Verben","type":"CONTENT","content":"Bei regelmäßigen Verben wird das Hilfsverb konjugiert und steht an zweiter Stelle. Das Partizip II wird gebildet, indem man 'ge-' vor den Verbstamm setzt und '-t' anhängt. Beispiele: machen → gemacht, lernen → gelernt.","task":{"taskDescription":"Ergänze die Sätze mit dem richtigen Partizip II.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"Ich habe gestern meine Hausaufgaben {{INSERT}}.","correctSentence":"Ich habe gestern meine Hausaufgaben {{gemacht}}."},{"fillSentence":"Er hat den ganzen Abend {{INSERT}}.","correctSentence":"Er hat den ganzen Abend {{gelernt}}."}],"fillWords":["gemacht","gelernt"]}}},{"name":"Bildung des Perfekts mit unregelmäßigen Verben","type":"CONTENT","content":"Bei unregelmäßigen Verben wird das Hilfsverb konjugiert und steht an zweiter Stelle. Das Partizip II beginnt meist mit 'ge-' und endet mit '-en'. Beispiele: trinken → getrunken, singen → gesungen.","task":{"taskDescription":"Ergänze die Sätze mit dem richtigen Partizip II.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"Sie haben viel Wasser {{INSERT}}.","correctSentence":"Sie haben viel Wasser {{getrunken}}."},{"fillSentence":"Andrea hat bei der Aufführung wunderschön {{INSERT}}.","correctSentence":"Andrea hat bei der Aufführung wunderschön {{gesungen}}."}],"fillWords":["getrunken","gesungen"]}}},{"name":"Verwendung von 'haben' und 'sein'","type":"CONTENT","content":"Das Hilfsverb 'haben' wird bei den meisten Verben verwendet, besonders bei solchen mit Akkusativobjekt. 'Sein' wird bei Verben ohne Akkusativobjekt verwendet, die eine Bewegung oder Zustandsveränderung ausdrücken.","task":{"taskDescription":"Entscheide, ob 'haben' oder 'sein' verwendet wird.","task":{"type":"true-false","sentences":[{"fillSentence":"Peter ist vor zwei Tagen von der Reise gekommen.","correctSentence":"Peter ist vor zwei Tagen von der Reise gekommen."},{"fillSentence":"Sascha ist in der Donau geschwommen.","correctSentence":"Sascha ist in der Donau geschwommen."},{"fillSentence":"Ich habe gestern sehr früh eingeschlafen.","correctSentence":"Ich bin gestern sehr früh eingeschlafen."}],"fillWords":[]}}},{"name":"Besonderheiten im österreichischen Deutsch","type":"CONTENT","content":"Im österreichischen Deutsch wird 'sein' auch bei den Verben sitzen, liegen und stehen verwendet. Beispiele: Ich bin gesessen. Wir sind im Gras gelegen.","task":null},{"name":"Mini-Diktat","type":"CONTENT","content":"Am Wochenende bin ich lange spazieren gegangen. Danach habe ich ein Buch gelesen und einen Tee getrunken. Abends sind meine Freunde gekommen, und wir haben gemeinsam Pizza gegessen. Es war ein schöner Tag.","task":{"taskDescription":"Fülle die Lücken im Text.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"Am Wochenende bin ich lange {{INSERT}} gegangen.","correctSentence":"Am Wochenende bin ich lange {{spazieren}} gegangen."},{"fillSentence":"Danach habe ich ein Buch {{INSERT}} und einen Tee {{INSERT}}.","correctSentence":"Danach habe ich ein Buch {{gelesen}} und einen Tee {{getrunken}}."},{"fillSentence":"Abends sind meine Freunde {{INSERT}}, und wir haben gemeinsam Pizza {{INSERT}}.","correctSentence":"Abends sind meine Freunde {{gekommen}}, und wir haben gemeinsam Pizza {{gegessen}}."},{"fillSentence":"Es war ein {{INSERT}} Tag.","correctSentence":"Es war ein {{schöner}} Tag."}],"fillWords":["spazieren","gelesen","getrunken","gekommen","gegessen","schöner"]}}}]}]}}]
+[
+  {
+    "course": {
+      "id": "25abb7f1-b449-79a5-93ad-0bb6f8347e9c",
+      "name": "A2",
+      "classes": [
+        {
+          "id": "a3def095-4b5d-7d59-b99b-4efe2f841dbc",
+          "name": "Perfekt mit haben und sein",
+          "description": "Lerne die Bildung und Anwendung des Perfekts mit den Hilfsverben 'haben' und 'sein'.",
+          "contentElements": [
+            {
+              "name": "Einführung in das Perfekt",
+              "type": "CONTENT",
+              "content": "Das Perfekt ist eine Zeitform, die wir verwenden, um über die Vergangenheit zu sprechen, besonders im gesprochenen Deutsch. Es besteht aus einem Hilfsverb ('haben' oder 'sein') und dem Partizip II.",
+              "task": null
+            },
+            {
+              "name": "Bildung des Perfekts mit regelmäßigen Verben",
+              "type": "CONTENT",
+              "content": "Bei regelmäßigen Verben wird das Hilfsverb konjugiert und steht an zweiter Stelle. Das Partizip II wird gebildet, indem man 'ge-' vor den Verbstamm setzt und '-t' anhängt. Beispiele: machen → gemacht, lernen → gelernt.",
+              "task": {
+                "taskDescription": "Ergänze die Sätze mit dem richtigen Partizip II.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "Ich habe gestern meine Hausaufgaben {{INSERT}}.",
+                      "correctSentence": "Ich habe gestern meine Hausaufgaben {{gemacht}}."
+                    },
+                    {
+                      "fillSentence": "Er hat den ganzen Abend {{INSERT}}.",
+                      "correctSentence": "Er hat den ganzen Abend {{gelernt}}."
+                    }
+                  ],
+                  "fillWords": ["gemacht", "gelernt"]
+                }
+              }
+            },
+            {
+              "name": "Bildung des Perfekts mit unregelmäßigen Verben",
+              "type": "CONTENT",
+              "content": "Bei unregelmäßigen Verben wird das Hilfsverb konjugiert und steht an zweiter Stelle. Das Partizip II beginnt meist mit 'ge-' und endet mit '-en'. Beispiele: trinken → getrunken, singen → gesungen.",
+              "task": {
+                "taskDescription": "Ergänze die Sätze mit dem richtigen Partizip II.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "Sie haben viel Wasser {{INSERT}}.",
+                      "correctSentence": "Sie haben viel Wasser {{getrunken}}."
+                    },
+                    {
+                      "fillSentence": "Andrea hat bei der Aufführung wunderschön {{INSERT}}.",
+                      "correctSentence": "Andrea hat bei der Aufführung wunderschön {{gesungen}}."
+                    }
+                  ],
+                  "fillWords": ["getrunken", "gesungen"]
+                }
+              }
+            },
+            {
+              "name": "Verwendung von 'haben' und 'sein'",
+              "type": "CONTENT",
+              "content": "Das Hilfsverb 'haben' wird bei den meisten Verben verwendet, besonders bei solchen mit Akkusativobjekt. 'Sein' wird bei Verben ohne Akkusativobjekt verwendet, die eine Bewegung oder Zustandsveränderung ausdrücken.",
+              "task": {
+                "taskDescription": "Entscheide, ob 'haben' oder 'sein' verwendet wird.",
+                "task": {
+                  "type": "true-false",
+                  "sentences": [
+                    {
+                      "fillSentence": "Peter ist vor zwei Tagen von der Reise gekommen.",
+                      "correctSentence": "Peter ist vor zwei Tagen von der Reise gekommen."
+                    },
+                    {
+                      "fillSentence": "Sascha ist in der Donau geschwommen.",
+                      "correctSentence": "Sascha ist in der Donau geschwommen."
+                    },
+                    {
+                      "fillSentence": "Ich habe gestern sehr früh eingeschlafen.",
+                      "correctSentence": "Ich bin gestern sehr früh eingeschlafen."
+                    }
+                  ],
+                  "fillWords": []
+                }
+              }
+            },
+            {
+              "name": "Besonderheiten im österreichischen Deutsch",
+              "type": "CONTENT",
+              "content": "Im österreichischen Deutsch wird 'sein' auch bei den Verben sitzen, liegen und stehen verwendet. Beispiele: Ich bin gesessen. Wir sind im Gras gelegen.",
+              "task": null
+            },
+            {
+              "name": "Mini-Diktat",
+              "type": "CONTENT",
+              "content": "Am Wochenende bin ich lange spazieren gegangen. Danach habe ich ein Buch gelesen und einen Tee getrunken. Abends sind meine Freunde gekommen, und wir haben gemeinsam Pizza gegessen. Es war ein schöner Tag.",
+              "task": {
+                "taskDescription": "Fülle die Lücken im Text.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "Am Wochenende bin ich lange {{INSERT}} gegangen.",
+                      "correctSentence": "Am Wochenende bin ich lange {{spazieren}} gegangen."
+                    },
+                    {
+                      "fillSentence": "Danach habe ich ein Buch {{INSERT}} und einen Tee {{INSERT}}.",
+                      "correctSentence": "Danach habe ich ein Buch {{gelesen}} und einen Tee {{getrunken}}."
+                    },
+                    {
+                      "fillSentence": "Abends sind meine Freunde {{INSERT}}, und wir haben gemeinsam Pizza {{INSERT}}.",
+                      "correctSentence": "Abends sind meine Freunde {{gekommen}}, und wir haben gemeinsam Pizza {{gegessen}}."
+                    },
+                    {
+                      "fillSentence": "Es war ein {{INSERT}} Tag.",
+                      "correctSentence": "Es war ein {{schöner}} Tag."
+                    }
+                  ],
+                  "fillWords": [
+                    "spazieren",
+                    "gelesen",
+                    "getrunken",
+                    "gekommen",
+                    "gegessen",
+                    "schöner"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

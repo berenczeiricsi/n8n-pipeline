@@ -1,1 +1,120 @@
-[{"course":{"id":"25abb7f1-b449-79a5-93ad-0bb6f8347e9c","name":"A2","classes":[{"id":"53a0e5d0-5fca-7719-8ad3-88794dfa79ed","name":"Verben mit Dativ und Akkusativ","description":"Lerne Verben, die sowohl ein Dativ- als auch ein Akkusativobjekt erfordern, mit Beispielen und Übungen.","contentElements":[{"name":"Einführung und Mini-Dialog","type":"CONTENT","content":"Aktivierung des Vorwissens: Wiederholung von Dativ und Akkusativ. Mini-Dialog: AP beschreibt eine Situation und stellt Fragen. Der/Die Lernende antwortet. Beispiel: AP: Du bist auf einer Geburtstagsparty deiner Freundin. Was hast du gekauft? L: Ich habe ihr ein Buch und eine Pflanze gekauft.","task":null},{"name":"Grammatische Erklärung","type":"CONTENT","content":"Einige Verben im Deutschen brauchen zwei Objekte: eines im Dativ und eines im Akkusativ. Beispiel: 'Ich schenke meiner Mutter (Dativ) ein Buch (Akkusativ)'. Bildung: 1. Subjekt + Verb + Dativobjekt + Akkusativobjekt. 2. Die Reihenfolge kann variieren.","task":null},{"name":"Häufige Verben","type":"CONTENT","content":"Häufige Verben mit Dativ und Akkusativ: geben, schenken, bringen, zeigen, erklären, kaufen, leihen, schreiben, empfehlen. Beispiel: 'Ich gebe dir (D) das Buch (A)'.","task":null},{"name":"Übung: Sätze bilden","type":"CONTENT","content":"Übung: Bilden Sie Sätze mit Dativ- und Akkusativobjekt. Beispiel: AP: geben. L: Seine Frau gibt ihm eine Jacke.","task":{"taskDescription":"Bilden Sie Sätze mit den vorgegebenen Verben.","task":{"type":"sentence-puzzle","sentences":[{"fillSentence":"ich / das Buch / gebe / dir","correctSentence":"Ich gebe dir das Buch."},{"fillSentence":"wir / den Weg / zeigen / dem Mann","correctSentence":"Wir zeigen dem Mann den Weg."},{"fillSentence":"sie / eine Postkarte / schreibt / der Freundin","correctSentence":"Sie schreibt der Freundin eine Postkarte."}],"fillWords":[]}}},{"name":"Übung: Richtig oder falsch?","type":"CONTENT","content":"Übung: Bestimmen Sie, ob die Sätze richtig oder falsch sind und korrigieren Sie die Fehler.","task":{"taskDescription":"Korrigieren Sie die fehlerhaften Sätze.","task":{"type":"true-false","sentences":[{"fillSentence":"Ich gebe das Kind den Ball.","correctSentence":"Ich gebe dem Kind den Ball."},{"fillSentence":"Wir zeigen der Touristin den Weg.","correctSentence":"Wir zeigen der Touristin den Weg."},{"fillSentence":"Du schenkst ich eines Buch.","correctSentence":"Du schenkst mir ein Buch."}],"fillWords":[]}}},{"name":"Mini-Diktat","type":"CONTENT","content":"Volltext: Heute habe ich meiner Schwester ein Buch gegeben. Sie hat sich sehr gefreut. Später haben wir unserem Vater einen Kuchen gebracht. Abends hat meine Mutter mir einen Tee gekocht.","task":{"taskDescription":"Füllen Sie die Lücken im Text.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"Heute habe ich {{INSERT}} Schwester ein {{INSERT}} gegeben.","correctSentence":"Heute habe ich {{meiner}} Schwester ein {{Buch}} gegeben."},{"fillSentence":"Später haben wir {{INSERT}} Vater einen {{INSERT}} gebracht.","correctSentence":"Später haben wir {{unserem}} Vater einen {{Kuchen}} gebracht."},{"fillSentence":"Abends hat meine Mutter {{INSERT}} einen {{INSERT}} gekocht.","correctSentence":"Abends hat meine Mutter {{mir}} einen {{Tee}} gekocht."}],"fillWords":["meiner","Buch","unserem","Kuchen","mir","Tee"]}}}]}]}}]
+[
+  {
+    "course": {
+      "id": "25abb7f1-b449-79a5-93ad-0bb6f8347e9c",
+      "name": "A2",
+      "classes": [
+        {
+          "id": "53a0e5d0-5fca-7719-8ad3-88794dfa79ed",
+          "name": "Verben mit Dativ und Akkusativ",
+          "description": "Lerne Verben, die sowohl ein Dativ- als auch ein Akkusativobjekt erfordern, mit Beispielen und Übungen.",
+          "contentElements": [
+            {
+              "name": "Einführung und Mini-Dialog",
+              "type": "CONTENT",
+              "content": "Aktivierung des Vorwissens: Wiederholung von Dativ und Akkusativ. Mini-Dialog: AP beschreibt eine Situation und stellt Fragen. Der/Die Lernende antwortet. Beispiel: AP: Du bist auf einer Geburtstagsparty deiner Freundin. Was hast du gekauft? L: Ich habe ihr ein Buch und eine Pflanze gekauft.",
+              "task": null
+            },
+            {
+              "name": "Grammatische Erklärung",
+              "type": "CONTENT",
+              "content": "Einige Verben im Deutschen brauchen zwei Objekte: eines im Dativ und eines im Akkusativ. Beispiel: 'Ich schenke meiner Mutter (Dativ) ein Buch (Akkusativ)'. Bildung: 1. Subjekt + Verb + Dativobjekt + Akkusativobjekt. 2. Die Reihenfolge kann variieren.",
+              "task": null
+            },
+            {
+              "name": "Häufige Verben",
+              "type": "CONTENT",
+              "content": "Häufige Verben mit Dativ und Akkusativ: geben, schenken, bringen, zeigen, erklären, kaufen, leihen, schreiben, empfehlen. Beispiel: 'Ich gebe dir (D) das Buch (A)'.",
+              "task": null
+            },
+            {
+              "name": "Übung: Sätze bilden",
+              "type": "CONTENT",
+              "content": "Übung: Bilden Sie Sätze mit Dativ- und Akkusativobjekt. Beispiel: AP: geben. L: Seine Frau gibt ihm eine Jacke.",
+              "task": {
+                "taskDescription": "Bilden Sie Sätze mit den vorgegebenen Verben.",
+                "task": {
+                  "type": "sentence-puzzle",
+                  "sentences": [
+                    {
+                      "fillSentence": "ich / das Buch / gebe / dir",
+                      "correctSentence": "Ich gebe dir das Buch."
+                    },
+                    {
+                      "fillSentence": "wir / den Weg / zeigen / dem Mann",
+                      "correctSentence": "Wir zeigen dem Mann den Weg."
+                    },
+                    {
+                      "fillSentence": "sie / eine Postkarte / schreibt / der Freundin",
+                      "correctSentence": "Sie schreibt der Freundin eine Postkarte."
+                    }
+                  ],
+                  "fillWords": []
+                }
+              }
+            },
+            {
+              "name": "Übung: Richtig oder falsch?",
+              "type": "CONTENT",
+              "content": "Übung: Bestimmen Sie, ob die Sätze richtig oder falsch sind und korrigieren Sie die Fehler.",
+              "task": {
+                "taskDescription": "Korrigieren Sie die fehlerhaften Sätze.",
+                "task": {
+                  "type": "true-false",
+                  "sentences": [
+                    {
+                      "fillSentence": "Ich gebe das Kind den Ball.",
+                      "correctSentence": "Ich gebe dem Kind den Ball."
+                    },
+                    {
+                      "fillSentence": "Wir zeigen der Touristin den Weg.",
+                      "correctSentence": "Wir zeigen der Touristin den Weg."
+                    },
+                    {
+                      "fillSentence": "Du schenkst ich eines Buch.",
+                      "correctSentence": "Du schenkst mir ein Buch."
+                    }
+                  ],
+                  "fillWords": []
+                }
+              }
+            },
+            {
+              "name": "Mini-Diktat",
+              "type": "CONTENT",
+              "content": "Volltext: Heute habe ich meiner Schwester ein Buch gegeben. Sie hat sich sehr gefreut. Später haben wir unserem Vater einen Kuchen gebracht. Abends hat meine Mutter mir einen Tee gekocht.",
+              "task": {
+                "taskDescription": "Füllen Sie die Lücken im Text.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "Heute habe ich {{INSERT}} Schwester ein {{INSERT}} gegeben.",
+                      "correctSentence": "Heute habe ich {{meiner}} Schwester ein {{Buch}} gegeben."
+                    },
+                    {
+                      "fillSentence": "Später haben wir {{INSERT}} Vater einen {{INSERT}} gebracht.",
+                      "correctSentence": "Später haben wir {{unserem}} Vater einen {{Kuchen}} gebracht."
+                    },
+                    {
+                      "fillSentence": "Abends hat meine Mutter {{INSERT}} einen {{INSERT}} gekocht.",
+                      "correctSentence": "Abends hat meine Mutter {{mir}} einen {{Tee}} gekocht."
+                    }
+                  ],
+                  "fillWords": [
+                    "meiner",
+                    "Buch",
+                    "unserem",
+                    "Kuchen",
+                    "mir",
+                    "Tee"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

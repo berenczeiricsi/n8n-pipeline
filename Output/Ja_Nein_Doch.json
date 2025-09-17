@@ -1,1 +1,99 @@
-[{"course":{"id":"25abb7f1-b449-79a5-93ad-0bb6f8347e9c","name":"A2","classes":[{"id":"a7c31543-3b4c-7182-b647-425e14e7b8c0","name":"Ja Nein Doch","description":"Verwendung der Antwortpartikeln ja, nein und doch im Deutschen","contentElements":[{"name":"Einführung in die Antwortpartikeln","type":"CONTENT","content":"Im Deutschen spielen die Antwortpartikeln ja, nein und doch eine zentrale Rolle in der Dialogstruktur für Zustimmung, Ablehnung oder Widerspruch. Die Bedeutungen hängen stark vom Satztyp (positiv/negativ) und vom kommunikativen Kontext ab.","task":null},{"name":"Verwendung von 'ja'","type":"CONTENT","content":"Ja wird zur Zustimmung zu einer positiven Aussage oder Frage verwendet, aber auch zur Bestätigung einer Sachlage. Beispiel: A: Magst du Kuchen? B: Ja.","task":null},{"name":"Verwendung von 'nein'","type":"CONTENT","content":"Nein wird zur Ablehnung oder Verneinung einer Aussage oder Frage verwendet, aber auch zum Widersprechen bei positiven Aussagen oder Fragen. Beispiel: A: Hast du Zeit? B: Nein.","task":null},{"name":"Verwendung von 'doch'","type":"CONTENT","content":"Doch wird zum Widerspruch bei einer verneinten Aussage verwendet und hebt eine negative Aussage oder Frage auf. Beispiel: A: Du hast das nicht gemacht, oder? B: Doch, ich habe es gemacht.","task":null},{"name":"Typische Fehlerquellen","type":"CONTENT","content":"Typische Fehler sind das Vergessen von 'doch' oder die Verwirrung bei verneinten Fragen. Beispiel: A: Gehst du heute nicht zur Arbeit? B: Doch, ich gehe.","task":null},{"name":"Übung: Wähle die richtige Antwortpartikel","type":"CONTENT","content":"Ergänze den Dialog mit ja, nein oder doch.","task":{"taskDescription":"Wähle ja, nein oder doch und ergänze den Dialog richtig.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"A: Kommst du heute Abend zur Party? B: {{INSERT}}, ich habe schon zugesagt.","correctSentence":"A: Kommst du heute Abend zur Party? B: {{Ja}}, ich habe schon zugesagt."},{"fillSentence":"A: Du hast mir gestern nicht geschrieben! B: {{INSERT}}, ich habe dir eine Nachricht geschickt.","correctSentence":"A: Du hast mir gestern nicht geschrieben! B: {{Doch}}, ich habe dir eine Nachricht geschickt."},{"fillSentence":"A: Du isst kein Fleisch, oder? B: {{INSERT}}, ich bin Vegetarier.","correctSentence":"A: Du isst kein Fleisch, oder? B: {{Nein}}, ich bin Vegetarier."},{"fillSentence":"A: Hast du den Film gesehen? B: {{INSERT}}, er war spannend.","correctSentence":"A: Hast du den Film gesehen? B: {{Ja}}, er war spannend."},{"fillSentence":"A: Du warst nicht bei der Besprechung! B: {{INSERT}}, ich war da, nur ein bisschen spät.","correctSentence":"A: Du warst nicht bei der Besprechung! B: {{Doch}}, ich war da, nur ein bisschen spät."}],"fillWords":["Ja","Doch","Nein","Ja","Doch"]}}},{"name":"Mini-Diktat","type":"CONTENT","content":"Heute habe ich lange geschlafen. Meine Mutter hat gesagt: „Du kommst sicher nicht pünktlich!“ Aber ich habe gesagt: „Doch, ich komme pünktlich!“ Sie glaubt mir nicht, aber ich bin doch rechtzeitig losgegangen. Sie hat dann gelacht und gesagt: „Ja, du bist pünktlich!“","task":{"taskDescription":"Ergänze den Lückentext.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"Heute habe ich lange geschlafen. Meine Mutter hat gesagt: „Du kommst sicher {{INSERT}} pünktlich!“ Aber ich habe gesagt: „{{INSERT}}, ich komme pünktlich!“ Sie glaubt mir {{INSERT}}, aber ich bin {{INSERT}} rechtzeitig losgegangen. Sie hat dann gelacht und gesagt: „{{INSERT}}, du bist pünktlich!“","correctSentence":"Heute habe ich lange geschlafen. Meine Mutter hat gesagt: „Du kommst sicher {{nicht}} pünktlich!“ Aber ich habe gesagt: „{{Doch}}, ich komme pünktlich!“ Sie glaubt mir {{nicht}}, aber ich bin {{doch}} rechtzeitig losgegangen. Sie hat dann gelacht und gesagt: „{{Ja}}, du bist pünktlich!“"}],"fillWords":["nicht","doch","nicht","doch","Ja"]}}}]}]}}]
+[
+  {
+    "course": {
+      "id": "25abb7f1-b449-79a5-93ad-0bb6f8347e9c",
+      "name": "A2",
+      "classes": [
+        {
+          "id": "a7c31543-3b4c-7182-b647-425e14e7b8c0",
+          "name": "Ja Nein Doch",
+          "description": "Verwendung der Antwortpartikeln ja, nein und doch im Deutschen",
+          "contentElements": [
+            {
+              "name": "Einführung in die Antwortpartikeln",
+              "type": "CONTENT",
+              "content": "Im Deutschen spielen die Antwortpartikeln ja, nein und doch eine zentrale Rolle in der Dialogstruktur für Zustimmung, Ablehnung oder Widerspruch. Die Bedeutungen hängen stark vom Satztyp (positiv/negativ) und vom kommunikativen Kontext ab.",
+              "task": null
+            },
+            {
+              "name": "Verwendung von 'ja'",
+              "type": "CONTENT",
+              "content": "Ja wird zur Zustimmung zu einer positiven Aussage oder Frage verwendet, aber auch zur Bestätigung einer Sachlage. Beispiel: A: Magst du Kuchen? B: Ja.",
+              "task": null
+            },
+            {
+              "name": "Verwendung von 'nein'",
+              "type": "CONTENT",
+              "content": "Nein wird zur Ablehnung oder Verneinung einer Aussage oder Frage verwendet, aber auch zum Widersprechen bei positiven Aussagen oder Fragen. Beispiel: A: Hast du Zeit? B: Nein.",
+              "task": null
+            },
+            {
+              "name": "Verwendung von 'doch'",
+              "type": "CONTENT",
+              "content": "Doch wird zum Widerspruch bei einer verneinten Aussage verwendet und hebt eine negative Aussage oder Frage auf. Beispiel: A: Du hast das nicht gemacht, oder? B: Doch, ich habe es gemacht.",
+              "task": null
+            },
+            {
+              "name": "Typische Fehlerquellen",
+              "type": "CONTENT",
+              "content": "Typische Fehler sind das Vergessen von 'doch' oder die Verwirrung bei verneinten Fragen. Beispiel: A: Gehst du heute nicht zur Arbeit? B: Doch, ich gehe.",
+              "task": null
+            },
+            {
+              "name": "Übung: Wähle die richtige Antwortpartikel",
+              "type": "CONTENT",
+              "content": "Ergänze den Dialog mit ja, nein oder doch.",
+              "task": {
+                "taskDescription": "Wähle ja, nein oder doch und ergänze den Dialog richtig.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "A: Kommst du heute Abend zur Party? B: {{INSERT}}, ich habe schon zugesagt.",
+                      "correctSentence": "A: Kommst du heute Abend zur Party? B: {{Ja}}, ich habe schon zugesagt."
+                    },
+                    {
+                      "fillSentence": "A: Du hast mir gestern nicht geschrieben! B: {{INSERT}}, ich habe dir eine Nachricht geschickt.",
+                      "correctSentence": "A: Du hast mir gestern nicht geschrieben! B: {{Doch}}, ich habe dir eine Nachricht geschickt."
+                    },
+                    {
+                      "fillSentence": "A: Du isst kein Fleisch, oder? B: {{INSERT}}, ich bin Vegetarier.",
+                      "correctSentence": "A: Du isst kein Fleisch, oder? B: {{Nein}}, ich bin Vegetarier."
+                    },
+                    {
+                      "fillSentence": "A: Hast du den Film gesehen? B: {{INSERT}}, er war spannend.",
+                      "correctSentence": "A: Hast du den Film gesehen? B: {{Ja}}, er war spannend."
+                    },
+                    {
+                      "fillSentence": "A: Du warst nicht bei der Besprechung! B: {{INSERT}}, ich war da, nur ein bisschen spät.",
+                      "correctSentence": "A: Du warst nicht bei der Besprechung! B: {{Doch}}, ich war da, nur ein bisschen spät."
+                    }
+                  ],
+                  "fillWords": ["Ja", "Doch", "Nein", "Ja", "Doch"]
+                }
+              }
+            },
+            {
+              "name": "Mini-Diktat",
+              "type": "CONTENT",
+              "content": "Heute habe ich lange geschlafen. Meine Mutter hat gesagt: „Du kommst sicher nicht pünktlich!“ Aber ich habe gesagt: „Doch, ich komme pünktlich!“ Sie glaubt mir nicht, aber ich bin doch rechtzeitig losgegangen. Sie hat dann gelacht und gesagt: „Ja, du bist pünktlich!“",
+              "task": {
+                "taskDescription": "Ergänze den Lückentext.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "Heute habe ich lange geschlafen. Meine Mutter hat gesagt: „Du kommst sicher {{INSERT}} pünktlich!“ Aber ich habe gesagt: „{{INSERT}}, ich komme pünktlich!“ Sie glaubt mir {{INSERT}}, aber ich bin {{INSERT}} rechtzeitig losgegangen. Sie hat dann gelacht und gesagt: „{{INSERT}}, du bist pünktlich!“",
+                      "correctSentence": "Heute habe ich lange geschlafen. Meine Mutter hat gesagt: „Du kommst sicher {{nicht}} pünktlich!“ Aber ich habe gesagt: „{{Doch}}, ich komme pünktlich!“ Sie glaubt mir {{nicht}}, aber ich bin {{doch}} rechtzeitig losgegangen. Sie hat dann gelacht und gesagt: „{{Ja}}, du bist pünktlich!“"
+                    }
+                  ],
+                  "fillWords": ["nicht", "doch", "nicht", "doch", "Ja"]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

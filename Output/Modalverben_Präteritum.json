@@ -1,1 +1,101 @@
-[{"course":{"id":"25abb7f1-b449-79a5-93ad-0bb6f8347e9c","name":"A2","classes":[{"id":"2b5677d1-ba72-7abe-a134-5775e4282ea1","name":"Modalverben Präteritum","description":"Lerne die Verwendung und Bildung von Modalverben im Präteritum.","contentElements":[{"name":"Einführung in Modalverben im Präteritum","type":"CONTENT","content":"Modalverben zeigen, wie oder warum etwas passiert. Sie drücken Notwendigkeit, Möglichkeit, Erlaubnis oder Fähigkeit aus. Im Präteritum werden sie verwendet, um Vergangenes zu beschreiben. Die sechs wichtigsten Modalverben sind: dürfen (Erlaubnis), können (Fähigkeit/Möglichkeit), mögen (Wunsch), müssen (Notwendigkeit), sollen (Verpflichtung), wollen (Absicht).","task":null},{"name":"Bildung der Modalverben im Präteritum","type":"CONTENT","content":"Modalverben sind unregelmäßig. Die Personalendungen sind meist wie bei den schwachen Verben, der Stammvokal kann sich jedoch ändern. Beispiele: Ich konnte nicht schlafen. Ich musste früh aufstehen.","task":{"taskDescription":"Setze die Modalverben in die richtige Präteritumform.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"Ich {{INSERT}} gestern lernen.","correctSentence":"Ich {{sollte}} gestern lernen."},{"fillSentence":"Wir {{INSERT}} nicht kommen.","correctSentence":"Wir {{konnten}} nicht kommen."},{"fillSentence":"Sie {{INSERT}} gehen.","correctSentence":"Sie {{wollte}} gehen."}],"fillWords":["sollte","konnten","wollte"]}}},{"name":"Verwendung der Modalverben","type":"CONTENT","content":"1. Modalverb + Infinitiv: Der Infinitiv des Vollverbs steht am Satzende. Das Modalverb wird in der konjugierten Form ins Präteritum an zweiter Stelle gesetzt. Beispiel: Ich musste früh aufstehen. 2. Modalverb als Vollverb: In bestimmten Kontexten steht das Modalverb allein, ohne Infinitiv. Beispiel: Ich wollte nicht.","task":{"taskDescription":"Bilde Sätze im Präteritum mit den gegebenen Modalverben.","task":{"type":"sentence-puzzle","sentences":[{"fillSentence":"gestern / ich / zur Schule / gehen / müssen","correctSentence":"Ich musste gestern zur Schule gehen."},{"fillSentence":"er / fernsehen / nicht / dürfen","correctSentence":"Er durfte nicht fernsehen."},{"fillSentence":"wir / schlafen / früh / wollen","correctSentence":"Wir wollten früh schlafen."}],"fillWords":[]}}},{"name":"Mini-Diktat","type":"CONTENT","content":"Gestern war ein anstrengender Tag. Ich musste früh aufstehen und zur Arbeit gehen. Danach wollte ich einkaufen, aber ich konnte nicht. Der Supermarkt war schon zu. Am Abend durfte ich nicht laut Musik hören, weil meine Nachbarn schliefen. Ich wollte noch lesen, aber ich war zu müde.","task":{"taskDescription":"Fülle die Lücken mit den richtigen Modalverben im Präteritum.","task":{"type":"fill-in-the-blank","sentences":[{"fillSentence":"Ich {{INSERT}} früh aufstehen.","correctSentence":"Ich {{musste}} früh aufstehen."},{"fillSentence":"Danach {{INSERT}} ich einkaufen.","correctSentence":"Danach {{wollte}} ich einkaufen."},{"fillSentence":"aber ich {{INSERT}} nicht.","correctSentence":"aber ich {{konnte}} nicht."}],"fillWords":["musste","wollte","konnte"]}}}]}]}}]
+[
+  {
+    "course": {
+      "id": "25abb7f1-b449-79a5-93ad-0bb6f8347e9c",
+      "name": "A2",
+      "classes": [
+        {
+          "id": "2b5677d1-ba72-7abe-a134-5775e4282ea1",
+          "name": "Modalverben Präteritum",
+          "description": "Lerne die Verwendung und Bildung von Modalverben im Präteritum.",
+          "contentElements": [
+            {
+              "name": "Einführung in Modalverben im Präteritum",
+              "type": "CONTENT",
+              "content": "Modalverben zeigen, wie oder warum etwas passiert. Sie drücken Notwendigkeit, Möglichkeit, Erlaubnis oder Fähigkeit aus. Im Präteritum werden sie verwendet, um Vergangenes zu beschreiben. Die sechs wichtigsten Modalverben sind: dürfen (Erlaubnis), können (Fähigkeit/Möglichkeit), mögen (Wunsch), müssen (Notwendigkeit), sollen (Verpflichtung), wollen (Absicht).",
+              "task": null
+            },
+            {
+              "name": "Bildung der Modalverben im Präteritum",
+              "type": "CONTENT",
+              "content": "Modalverben sind unregelmäßig. Die Personalendungen sind meist wie bei den schwachen Verben, der Stammvokal kann sich jedoch ändern. Beispiele: Ich konnte nicht schlafen. Ich musste früh aufstehen.",
+              "task": {
+                "taskDescription": "Setze die Modalverben in die richtige Präteritumform.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "Ich {{INSERT}} gestern lernen.",
+                      "correctSentence": "Ich {{sollte}} gestern lernen."
+                    },
+                    {
+                      "fillSentence": "Wir {{INSERT}} nicht kommen.",
+                      "correctSentence": "Wir {{konnten}} nicht kommen."
+                    },
+                    {
+                      "fillSentence": "Sie {{INSERT}} gehen.",
+                      "correctSentence": "Sie {{wollte}} gehen."
+                    }
+                  ],
+                  "fillWords": ["sollte", "konnten", "wollte"]
+                }
+              }
+            },
+            {
+              "name": "Verwendung der Modalverben",
+              "type": "CONTENT",
+              "content": "1. Modalverb + Infinitiv: Der Infinitiv des Vollverbs steht am Satzende. Das Modalverb wird in der konjugierten Form ins Präteritum an zweiter Stelle gesetzt. Beispiel: Ich musste früh aufstehen. 2. Modalverb als Vollverb: In bestimmten Kontexten steht das Modalverb allein, ohne Infinitiv. Beispiel: Ich wollte nicht.",
+              "task": {
+                "taskDescription": "Bilde Sätze im Präteritum mit den gegebenen Modalverben.",
+                "task": {
+                  "type": "sentence-puzzle",
+                  "sentences": [
+                    {
+                      "fillSentence": "gestern / ich / zur Schule / gehen / müssen",
+                      "correctSentence": "Ich musste gestern zur Schule gehen."
+                    },
+                    {
+                      "fillSentence": "er / fernsehen / nicht / dürfen",
+                      "correctSentence": "Er durfte nicht fernsehen."
+                    },
+                    {
+                      "fillSentence": "wir / schlafen / früh / wollen",
+                      "correctSentence": "Wir wollten früh schlafen."
+                    }
+                  ],
+                  "fillWords": []
+                }
+              }
+            },
+            {
+              "name": "Mini-Diktat",
+              "type": "CONTENT",
+              "content": "Gestern war ein anstrengender Tag. Ich musste früh aufstehen und zur Arbeit gehen. Danach wollte ich einkaufen, aber ich konnte nicht. Der Supermarkt war schon zu. Am Abend durfte ich nicht laut Musik hören, weil meine Nachbarn schliefen. Ich wollte noch lesen, aber ich war zu müde.",
+              "task": {
+                "taskDescription": "Fülle die Lücken mit den richtigen Modalverben im Präteritum.",
+                "task": {
+                  "type": "fill-in-the-blank",
+                  "sentences": [
+                    {
+                      "fillSentence": "Ich {{INSERT}} früh aufstehen.",
+                      "correctSentence": "Ich {{musste}} früh aufstehen."
+                    },
+                    {
+                      "fillSentence": "Danach {{INSERT}} ich einkaufen.",
+                      "correctSentence": "Danach {{wollte}} ich einkaufen."
+                    },
+                    {
+                      "fillSentence": "aber ich {{INSERT}} nicht.",
+                      "correctSentence": "aber ich {{konnte}} nicht."
+                    }
+                  ],
+                  "fillWords": ["musste", "wollte", "konnte"]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
